@@ -2,7 +2,7 @@ import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 
-const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/c8d4c5f01_ChatGPTImageAug4202607_39_14PM.png';
+const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/4f5fc7227_ChatGPTImageAug4202608_12_14PM.png';
 
 export default function CivicFooter() {
   return (
@@ -11,7 +11,7 @@ export default function CivicFooter() {
         <div className="grid gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="flex items-center gap-3">
-              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain mix-blend-multiply drop-shadow-[0_0_12px_rgba(96,165,250,0.6)]" fittingType="fit" />
+              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_12px_rgba(96,165,250,0.65)]" fittingType="fit" />
               <p className="text-lg font-black">Better Teresa</p>
             </div>
             <p className="mt-4 text-sm text-white/60">A volunteer-run community portal for the Municipality of Teresa, Province of Rizal.</p>

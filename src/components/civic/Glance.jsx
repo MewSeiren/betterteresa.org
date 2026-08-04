@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from '@/components/ui/image';
 import { glance } from '@/data/teresaData';
 
-const HALL = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Teresa_Municipal_Hall%2C_Rizal%2C_Jan_2026.jpg/800px-Teresa_Municipal_Hall%2C_Rizal%2C_Jan_2026.jpg';
+const HALL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/73351e640_image.png';
 
 export default function Glance() {
   return (
