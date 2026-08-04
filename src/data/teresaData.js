@@ -1,6 +1,8 @@
 export const hotlines = [
   { label: 'Municipal Hall', number: '(02) 8250-6800' },
-  { label: 'Emergency', number: '911' }
+  { label: 'PNP', number: '0945-113-7076' },
+  { label: 'BFP', number: '0917-771-0706' },
+  { label: 'MDRRMO', number: '0945-113-7077' }
 ];
 
 export const officials = [
@@ -68,8 +70,13 @@ export const projects = [
 
 export const offices = [
   { name: 'Office of the Municipal Mayor', line: '(02) 8250-6800 loc. 514', email: 'mayorsoffice@teresarizal.gov.ph' },
-  { name: 'Municipal Information Office', line: '(02) 8250-6800', email: 'information@teresarizal.gov.ph' },
-  { name: 'Environment & Natural Resources', line: '(02) 8250-6800', email: 'menro@teresarizal.gov.ph' },
-  { name: 'Municipal Anti-Drug Abuse Council', line: '(02) 8250-6800', email: 'madac@teresarizal.gov.ph' },
-  { name: 'Information Technology Office', line: '(02) 8250-6800', email: 'itoffice@teresarizal.gov.ph' }
+  { name: 'Sangguniang Bayan', line: '(02) 8250-6800 loc. 530', email: 'sb@teresarizal.gov.ph' },
+  { name: 'Civil Registrar (LCR)', line: '(02) 8250-6800 loc. 512', email: 'lcr@teresarizal.gov.ph' },
+  { name: 'Business Permit & Licensing (BPLO)', line: '(02) 8250-6800 loc. 526', email: 'bpls@teresarizal.gov.ph' },
+  { name: 'Treasury Office', line: '(02) 8250-6800 loc. 502', email: 'treasury@teresarizal.gov.ph' },
+  { name: 'Environment & Natural Resources (MENRO)', line: '(02) 8250-6800 loc. 501', email: 'menro@teresarizal.gov.ph' },
+  { name: 'Health Office (RHU)', line: '(02) 8250-6800 loc. 533/534', email: 'teresa_rhu@yahoo.com' },
+  { name: 'Social Welfare & Development (MSWDO)', line: '(02) 8250-6800 loc. 525', email: 'mswd@teresarizal.gov.ph' },
+  { name: 'Disaster Risk Reduction (MDRRMO)', line: '0945-113-7077', email: 'mdrrmo@teresarizal.gov.ph' },
+  { name: 'Information Technology Office', line: '(02) 8250-6800 loc. 555', email: 'itoffice@teresarizal.gov.ph' }
 ];
