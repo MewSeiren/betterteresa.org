@@ -11,7 +11,7 @@ export default function QuickAccess() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">Quick Access</p>
-            <h2 className="mt-2 text-2xl font-black tracking-tight text-[#0a1a35] sm:text-3xl">Mga pinakamadalas na kailangan</h2>
+            <h2 className="mt-2 text-2xl font-black tracking-tight text-[#0a1a35] sm:text-3xl">The most frequently needed</h2>
           </div>
           <a href="https://teresarizal.gov.ph/services" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#0a1a35] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#15294a]">View All Services <ArrowRight size={16} /></a>
         </div>

@@ -28,7 +28,7 @@ export default function NavBar() {
       {/* Top utility bar */}
       <div className="bg-[#0a1a35] text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 text-xs sm:px-6">
-          <p className="flex items-center gap-2 font-medium"><span>🚀</span> Sumali sa #CivicTech Revolution — Tulungan mong itayo ang hinaharap ng Teresa.</p>
+          <p className="flex items-center gap-2 font-medium"><span>🚀</span> Join the #CivicTech Revolution — Help shape the future of Teresa through technology.</p>
           <div className="hidden items-center gap-4 md:flex">
             <a href="tel:+63282506800" className="inline-flex items-center gap-1.5 text-white/70 hover:text-white"><Phone size={12} /> (02) 8250-6800</a>
             <a href="mailto:mayorsoffice@teresarizal.gov.ph" className="inline-flex items-center gap-1.5 text-white/70 hover:text-white"><Mail size={12} /> mayorsoffice@teresarizal.gov.ph</a>

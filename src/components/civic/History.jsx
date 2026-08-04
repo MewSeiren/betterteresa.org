@@ -8,8 +8,8 @@ export default function History() {
   return (
     <section>
       <div className="mb-8">
-        <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">Kasaysayan ng Teresa</p>
-        <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">Mula sa maliit na settlement patungong modernong bayan</h2>
+        <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">History of Teresa</p>
+        <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">From a small settlement to a modern town</h2>
       </div>
       <div className="relative border-l-2 border-slate-200 pl-6 sm:pl-8">
         {items.map((h, i) => (

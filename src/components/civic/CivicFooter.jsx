@@ -14,7 +14,7 @@ export default function CivicFooter() {
               <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain mix-blend-multiply drop-shadow-[0_0_12px_rgba(96,165,250,0.6)]" fittingType="fit" />
               <p className="text-lg font-black">Better Teresa</p>
             </div>
-            <p className="mt-4 text-sm text-white/60">Ang volunteer-run community portal ng Municipality of Teresa, Province of Rizal.</p>
+            <p className="mt-4 text-sm text-white/60">A volunteer-run community portal for the Municipality of Teresa, Province of Rizal.</p>
           </div>
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">Explore</p>
@@ -43,7 +43,7 @@ export default function CivicFooter() {
           </div>
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">Open Source</p>
-            <p className="text-sm text-white/60">Open source ang portal na ito. Mag-contribute, mag-report ng issues, o i-fork ang project sa GitHub.</p>
+            <p className="text-sm text-white/60">This portal is open source. Contribute, report issues, or fork the project on GitHub.</p>
             <a href="https://github.com/MewSeiren/betterteresa.org" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"><Github size={16} /> github.com/MewSeiren/betterteresa.org</a>
           </div>
         </div>

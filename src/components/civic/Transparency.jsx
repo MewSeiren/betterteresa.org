@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, FileCheck2, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Search, FileCheck2, ExternalLink } from 'lucide-react';
 import { records } from '@/data/teresaData';
 
 export default function Transparency() {
@@ -12,7 +12,7 @@ export default function Transparency() {
       <h2 className="mt-1 text-lg font-black text-[#0a1a35]">Public records</h2>
       <div className="relative mt-4">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
-        <input value={q} onChange={e => setQ(e.target.value)} placeholder="Maghanap ng records..." className="min-h-11 w-full rounded-lg border border-slate-200 bg-[#f8f9fa] pl-9 pr-3 text-sm outline-none focus:border-[#1a73e8]" />
+        <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search records..." className="min-h-11 w-full rounded-lg border border-slate-200 bg-[#f8f9fa] pl-9 pr-3 text-sm outline-none focus:border-[#1a73e8]" />
       </div>
       <div className="mt-4 space-y-2">
         {found.map(r => (

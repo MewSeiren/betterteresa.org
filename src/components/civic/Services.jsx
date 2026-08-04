@@ -10,8 +10,8 @@ export default function Services() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-10 max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">Government Services</p>
-          <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">Mabilis na access sa opisyal na services</h2>
-          <p className="mt-4 text-base text-slate-600">Hanapin ang kailangan mo para sa citizenship, business, education, health, at marami pang iba. Bawat service ay naka-link sa opisyal na municipal portal.</p>
+          <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">Quick access to official services</h2>
+          <p className="mt-4 text-base text-slate-600">Find what you need for civil records, business, education, health, and more. Each service links to the official municipal portal.</p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(s => {
