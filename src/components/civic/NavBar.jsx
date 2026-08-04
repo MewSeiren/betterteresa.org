@@ -43,7 +43,7 @@ export default function NavBar() {
             <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-11 w-11 rounded-full object-contain drop-shadow-[0_0_8px_rgba(26,115,232,0.45)]" fittingType="fit" />
             <div className="leading-tight">
               <p className="text-lg font-black tracking-tight text-[#0a1a35]">Better Teresa</p>
-              <p className="text-[11px] font-medium text-slate-500">Municipality of Teresa · Rizal</p>
+              <span className="mt-1 inline-block rounded bg-[#1a73e8]/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-[#1a73e8]">.ORG</span>
             </div>
           </a>
           <nav className="hidden items-center gap-1 lg:flex">

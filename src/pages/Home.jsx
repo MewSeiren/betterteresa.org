@@ -22,17 +22,19 @@ export default function Home() {
         <QuickAccess />
         <Services />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
-            <div className="space-y-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
+            <div className="space-y-8">
               <Glance />
               <History />
+              <FacebookUpdates />
             </div>
             <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
               <Government />
               <Transparency />
-              <FacebookUpdates />
-              <Contact />
             </aside>
+          </div>
+          <div className="mt-8">
+            <Contact />
           </div>
         </div>
       </main>

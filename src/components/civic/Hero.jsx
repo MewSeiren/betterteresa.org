@@ -12,7 +12,7 @@ export default function Hero() {
       </div>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl text-white">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/90 backdrop-blur">Municipality of Teresa · Province of Rizal</p>
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/90 backdrop-blur">Teresa, Province of Rizal</p>
           <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[0.95] tracking-tight">Welcome to Better Teresa</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">A volunteer-run portal for the Municipality of Teresa. Find information, access government services, and stay updated on the latest public records — all linked to verified sources.</p>
           <div className="mt-8 max-w-xl">
