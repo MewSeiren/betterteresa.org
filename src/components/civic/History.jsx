@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { history } from '@/data/teresaData';
 import { ChevronDown } from 'lucide-react';
+import { useLang } from '@/lib/LanguageContext';
 
 export default function History() {
+  const { t } = useLang();
   const [expanded, setExpanded] = useState(false);
   const items = expanded ? history : history.slice(0, 5);
   return (
     <section>
       <div className="mb-8">
-        <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">History of Teresa</p>
-        <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">From a small settlement to a modern town</h2>
+        <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">{t('hi.eyebrow')}</p>
+        <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">{t('hi.title')}</h2>
       </div>
       <div className="relative border-l-2 border-slate-200 pl-6 sm:pl-8">
         {items.map((h, i) => (
@@ -23,7 +25,7 @@ export default function History() {
       </div>
       {history.length > 5 && (
         <button onClick={() => setExpanded(!expanded)} className="mt-2 inline-flex min-h-12 items-center gap-2 rounded-full border border-slate-200 px-5 font-bold text-slate-700 transition hover:bg-slate-100">
-          {expanded ? 'Show Less' : 'Show More'} <ChevronDown size={18} className={expanded ? 'rotate-180 transition' : 'transition'} />
+          {expanded ? t('hi.less') : t('hi.more')} <ChevronDown size={18} className={expanded ? 'rotate-180 transition' : 'transition'} />
         </button>
       )}
     </section>

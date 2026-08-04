@@ -1,19 +1,21 @@
 import React from 'react';
 import { FileText, Building2, Gavel, BarChart3, DollarSign, ArrowRight } from 'lucide-react';
 import { quickAccess } from '@/data/teresaData';
+import { useLang } from '@/lib/LanguageContext';
 
 const icons = { FileText, Building2, Gavel, BarChart3, DollarSign };
 
 export default function QuickAccess() {
+  const { t } = useLang();
   return (
     <section className="bg-[#f8f9fa] py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">Quick Access</p>
-            <h2 className="mt-2 text-2xl font-black tracking-tight text-[#0a1a35] sm:text-3xl">The most frequently needed</h2>
+            <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">{t('qa.eyebrow')}</p>
+            <h2 className="mt-2 text-2xl font-black tracking-tight text-[#0a1a35] sm:text-3xl">{t('qa.title')}</h2>
           </div>
-          <a href="https://teresarizal.gov.ph/services" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#0a1a35] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#15294a]">View All Services <ArrowRight size={16} /></a>
+          <a href="https://teresarizal.gov.ph/services" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#0a1a35] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#15294a]">{t('qa.viewAll')} <ArrowRight size={16} /></a>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {quickAccess.map(q => {

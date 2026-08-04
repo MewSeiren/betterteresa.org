@@ -15,7 +15,9 @@ export const officials = [
   { name: 'Joker A. Santos', role: 'Councilor', initials: 'JS', focus: 'Housing, Land Use & Public Works' },
   { name: 'Aurelio G. Selibio, Jr.', role: 'Councilor', initials: 'AS', focus: 'Good Governance, Agriculture & Livelihood' },
   { name: 'Juvith E.S. Sto. Tomas', role: 'Councilor', initials: 'JT', focus: 'Transport, Communication & Amusements' },
-  { name: 'Victorious Joshua T. San Jose', role: 'Councilor', initials: 'VS', focus: 'Education, Culture & Employment' }
+  { name: 'Victorious Joshua T. San Jose', role: 'Councilor', initials: 'VS', focus: 'Education, Culture & Employment' },
+  { name: 'Liga ng mga Barangay President', role: 'Ex Officio', initials: 'LB', focus: 'Association of Barangay Captains (ABC)' },
+  { name: 'SK Federation President', role: 'Ex Officio', initials: 'SK', focus: 'Sangguniang Kabataan Federation' }
 ];
 
 export const services = [

@@ -3,12 +3,14 @@ import NavBar from '@/components/civic/NavBar';
 import Hero from '@/components/civic/Hero';
 import QuickAccess from '@/components/civic/QuickAccess';
 import Services from '@/components/civic/Services';
+import Tourism from '@/components/civic/Tourism';
 import Glance from '@/components/civic/Glance';
 import History from '@/components/civic/History';
 import Government from '@/components/civic/Government';
 import Transparency from '@/components/civic/Transparency';
 import FacebookUpdates from '@/components/civic/FacebookUpdates';
 import Contact from '@/components/civic/Contact';
+import Weather from '@/components/civic/Weather';
 import CivicFooter from '@/components/civic/CivicFooter';
 import ScrollProgress from '@/components/civic/ScrollProgress';
 
@@ -21,6 +23,7 @@ export default function Home() {
         <Hero />
         <QuickAccess />
         <Services />
+        <Tourism />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
             <div className="space-y-8">
@@ -29,6 +32,7 @@ export default function Home() {
               <FacebookUpdates />
             </div>
             <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+              <Weather />
               <Government />
               <Transparency />
             </aside>
