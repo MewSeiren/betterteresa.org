@@ -41,7 +41,7 @@ export default function CivicFooter() {
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#00E676]">Open Source</p>
             <p className="text-sm text-white/60">This portal is open source. Contribute, report issues, or fork the project on GitHub.</p>
-            <a href="https://github.com/MewSeiren/betterteresa.org" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"><Github size={16} /> github.com/betterteresa/betterteresa.org</a>
+            <a href="https://github.com/MewSeiren/betterteresa.org" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10">github.com/MewSeiren/betterteresa.org</a>
           </div>
         </div>
         <div className="mt-6 flex flex-wrap justify-between gap-3 text-xs text-white/45">
@@ -49,6 +49,6 @@ export default function CivicFooter() {
           <p>Open source on GitHub · github.com/MewSeiren/betterteresa.org · Sources: Municipality of Teresa · COA · DBM</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
