@@ -3,7 +3,7 @@ import { ExternalLink, Github } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { useLang } from '@/lib/LanguageContext';
 
-const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/241bf07d7_79f1d0c2-7381-41f6-9a92-9fc77d6c11b7_removalai_preview.png';
+const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/db79a6b00_generated_image.png';
 
 export default function CivicFooter() {
   const { t } = useLang();
@@ -42,7 +42,9 @@ export default function CivicFooter() {
         {/* Brand row */}
         <div className="flex flex-col gap-6 border-b border-white/10 pb-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-4">
-            <img src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-28 w-28 object-contain drop-shadow-[0_0_18px_rgba(96,165,250,0.7)]" style={{ mixBlendMode: 'screen' }} />
+            <div className="rounded-2xl bg-white/5 p-2 ring-1 ring-white/10">
+              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-24 w-24 object-contain drop-shadow-[0_0_18px_rgba(96,165,250,0.6)]" fittingType="fit" />
+            </div>
             <div>
               <p className="text-2xl font-black tracking-tight">Better Teresa<span className="ml-1 align-top text-xs font-bold tracking-wider text-[#60a5fa]">.ORG</span></p>
               <p className="mt-1 max-w-sm text-sm text-white/55">{t('ft.tagline')}</p>
