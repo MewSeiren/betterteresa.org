@@ -11,7 +11,7 @@ const CATS = [
   { key: 'tm.catResort', color: '#F7941E', spots: ["Marden\u2019s Place Private Resort", "Tita El\u2019s Place Private Resort", 'Yasak Resort', 'Rancho Felipe', 'Rancho Bravo'] },
   { key: 'tm.catParks', color: '#EC008C', spots: ['Quest Adventure Camp', 'Sidetrip'] },
   { key: 'tm.catFood', color: '#0071BC', spots: ['Ancla Coffee', "Greyson\u2019s Dimsum and Noodles", 'Thirteen Thirty Cafe', "Dad\u2019s Burger & House of Unlimited", "Ysabelle\u2019s Garden", 'Cafe Amelita', "Aurora\u2019s Place", 'Kamayan sa Palayan', "Kokoyito\u2019s Sizzling Hauz", "Eat\u2019s Takoyummy Food Hub", 'Gocca Coffee', 'Balai Urunjing', "Leof\u2019s Food House", "MJ\u2019s Burger", "Pinoy\u2019s Tsibug", "Teresa\u2019s Mais at Mani", "Timplado\u2019s Cuisine", 'Samgville 199', "Amara\u2019s Corner", "Jhayco\u2019s Grill and Restaurant", 'Wish Upon a Cake'] },
-  { key: 'tm.catRental', color: '#92278F', spots: ['Dictadel Swimming Pool Rental', 'Simon De La Casa'] },
+  { key: 'tm.catRental', color: '#92278F', spots: ['Dicitadel Swimming Pool Rental', 'Simon De La Casa'] },
   { key: 'tm.catIndustrial', color: '#00AEEF', spots: ['Integrated Solid Waste Management Facility (MRF)'] },
   { key: 'tm.catOthers', color: '#29ABE2', spots: ['Sarian Exotic Farm'] }
 ];
