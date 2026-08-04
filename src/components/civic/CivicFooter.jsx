@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Globe } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { useLang } from '@/lib/LanguageContext';
 
@@ -51,7 +51,7 @@ export default function CivicFooter() {
             </div>
           </div>
           <a href="https://lgu.bettergov.ph/" target="_blank" rel="noreferrer" className="group inline-flex items-center gap-3 rounded-xl border border-white/15 bg-white/5 px-5 py-3 transition hover:border-[#60a5fa]/40 hover:bg-white/10">
-            <span className="grid h-11 w-11 place-items-center rounded-lg bg-gradient-to-br from-[#1a73e8] to-[#0a3a8c] text-white shadow-lg"><Globe size={20} /></span>
+            <span className="grid h-11 w-11 place-items-center rounded-lg bg-white p-1.5 shadow-lg"><Image src="https://lgu.bettergov.ph/assets/images/logos/BetterGov_Icon-Primary.svg" alt="BetterGov.ph logo" className="h-full w-full object-contain" fittingType="fit" /></span>
             <span className="leading-tight">
               <span className="block text-sm font-bold text-white group-hover:text-[#60a5fa]">BetterGov.ph</span>
               <span className="text-xs font-medium text-white/55">LGU Directory</span>
