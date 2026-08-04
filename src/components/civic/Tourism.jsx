@@ -1,8 +1,5 @@
 import React from 'react';
-import { Image } from '@/components/ui/image';
 import { useLang } from '@/lib/LanguageContext';
-
-const MAP_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/a834e57dc_TeresaTourismSpotsLocatorMap.png';
 
 const gmap = (name) => `https://www.google.com/maps/search/${encodeURIComponent(name + ', Teresa, Rizal')}`;
 
@@ -27,12 +24,7 @@ export default function Tourism() {
           <p className="mt-4 text-base leading-relaxed text-slate-600">{t('tm.desc')}</p>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-          <Image src={MAP_URL} alt="Teresa Tourism Spots Locator Map" fittingType="fit" className="aspect-[16/10] w-full" />
-          <p className="mt-2 px-2 pb-1 text-xs text-slate-400">{t('tm.mapCredit')}</p>
-        </div>
-
-        <h3 className="mt-10 text-sm font-bold uppercase tracking-wider text-[#0a1a35]">{t('tm.spotsTitle')}</h3>
+        <h3 className="mt-2 text-sm font-bold uppercase tracking-wider text-[#0a1a35]">{t('tm.spotsTitle')}</h3>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CATS.map(c => (
             <div key={c.key} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
