@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '@/components/civic/NavBar';
 import Hero from '@/components/civic/Hero';
+import QuickAccess from '@/components/civic/QuickAccess';
 import Services from '@/components/civic/Services';
 import Glance from '@/components/civic/Glance';
 import History from '@/components/civic/History';
@@ -18,13 +19,22 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
+        <QuickAccess />
         <Services />
-        <Glance />
-        <History />
-        <Government />
-        <Transparency />
-        <FacebookUpdates />
-        <Contact />
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
+            <div className="space-y-12">
+              <Glance />
+              <History />
+            </div>
+            <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+              <Government />
+              <Transparency />
+              <FacebookUpdates />
+              <Contact />
+            </aside>
+          </div>
+        </div>
       </main>
       <CivicFooter />
     </div>

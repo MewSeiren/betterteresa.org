@@ -6,12 +6,12 @@ const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b
 
 export default function CivicFooter() {
   return (
-    <footer className="bg-[#0f172a] px-4 py-12 text-white sm:px-6">
+    <footer className="bg-[#0a1a35] px-4 py-12 text-white sm:px-6">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="flex items-center gap-3">
-              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain mix-blend-multiply drop-shadow-[0_0_14px_rgba(96,165,250,0.8)]" fittingType="fit" />
+              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain mix-blend-multiply drop-shadow-[0_0_12px_rgba(96,165,250,0.6)]" fittingType="fit" />
               <p className="text-lg font-black">Better Teresa</p>
             </div>
             <p className="mt-4 text-sm text-white/60">Ang volunteer-run community portal ng Municipality of Teresa, Province of Rizal.</p>
