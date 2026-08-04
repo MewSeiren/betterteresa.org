@@ -17,36 +17,36 @@ export const officials = [
 ];
 
 export const services = [
-  { title: 'Certificates & Vital Records', desc: 'Birth, marriage, and death certificates and other civil registry documents.', icon: 'FileText', href: 'https://teresarizal.gov.ph/services' },
-  { title: 'Business Permits & Licensing', desc: 'New business permits, renewals, and trade registration.', icon: 'Briefcase', href: 'https://teresarizal.gov.ph/services' },
-  { title: 'Tax Payments', desc: 'Real property tax, business tax, and tax clearance services.', icon: 'Receipt', href: 'https://teresarizal.gov.ph/services' },
-  { title: 'Social Services & Assistance', desc: 'Senior citizen, PWD, and welfare programs.', icon: 'HeartHandshake', href: 'https://teresarizal.gov.ph/services' },
-  { title: 'Health Services', desc: 'Medical assistance, vaccination programs, and health certificates.', icon: 'Stethoscope', href: 'https://teresarizal.gov.ph/services' },
-  { title: 'Infrastructure & Public Works', desc: 'Construction permits, road maintenance, and public facilities.', icon: 'HardHat', href: 'https://teresarizal.gov.ph/services' },
-  { title: 'Education & Scholarship', desc: 'Scholarship programs and student assistance.', icon: 'GraduationCap', href: 'https://teresarizal.gov.ph/services' },
-  { title: 'Agriculture & Livelihood', desc: 'Agricultural support, crop insurance, and training programs.', icon: 'Wheat', href: 'https://teresarizal.gov.ph/services' }
+  { title: 'Mga Sertipiko & Vital Records', desc: 'Birth, marriage, at death certificates at iba pang civil registry documents.', icon: 'FileText', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Business Permits & Licensing', desc: 'Bagong business permits, renewals, at trade registration.', icon: 'Briefcase', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Tax Payments', desc: 'Real property tax, business tax, at tax clearance services.', icon: 'Receipt', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Social Services & Assistance', desc: 'Senior citizen, PWD, at welfare programs.', icon: 'HeartHandshake', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Health Services', desc: 'Medical assistance, vaccination programs, at health certificates.', icon: 'Stethoscope', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Infrastructure & Public Works', desc: 'Construction permits, road maintenance, at public facilities.', icon: 'HardHat', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Education & Scholarship', desc: 'Scholarship programs at tulong para sa mga estudyante.', icon: 'GraduationCap', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Agriculture & Livelihood', desc: 'Suporta sa agrikultura, crop insurance, at training programs.', icon: 'Wheat', href: 'https://teresarizal.gov.ph/services' }
 ];
 
 export const quickAccess = [
   { title: 'Financial Reports', desc: 'Budget & income statements', icon: 'DollarSign', href: 'https://pda.teresarizal.gov.ph/' },
-  { title: 'Infrastructure', desc: 'Track municipal projects', icon: 'Building2', href: '#projects' },
+  { title: 'Infrastructure', desc: 'Subaybayan ang mga projects', icon: 'Building2', href: '#projects' },
   { title: 'Legislation', desc: 'Ordinances & resolutions', icon: 'Gavel', href: '#records' },
   { title: 'Statistics', desc: 'Population & demographics', icon: 'BarChart3', href: '#glance' }
 ];
 
 export const history = [
-  { year: 'Pre-Colonial', title: 'Mga Sinaunang Panahon', desc: 'A small settlement between Antipolo and Morong, rich in natural resources — fertile land, clean rivers, and crystalline springs that drew people from Morong.' },
-  { year: '1732', title: 'The Birth of Teresa', desc: 'A visita of Nuestra Señora de Santa Rosa was established. By 1878 the barrios of Santa Rosa, Pantay, Prinza, and Buhangin were known as Oroquieta.' },
-  { year: '1882', title: 'Named Teresa', desc: 'Through a Spanish lawyer who served without pay, Oroquieta became a town. Grateful residents named it TERESA in honor of his mother, Doña Teresa.' },
-  { year: '1898', title: 'Revolution & Freedom', desc: 'Brave men of Teresa joined the revolution. Col. Cornelio Garrovillas and Capt. Felipe Natividad founded a Katipunan group. Brigido C. Cruz was chosen President.' },
-  { year: '1919', title: 'An Independent Town', desc: 'Through Executive Order No. 57 signed by Acting Governor-General Charles E. Yeater on December 16, 1918, Teresa separated from Antipolo and became an independent municipality on January 1, 1919.' },
-  { year: '1950s', title: 'Rebuilding & Modernity', desc: 'Under Mayor Francisco C. Francisco (1952–1965), the Teresa Waterworks was completed and a new municipal hall built. The town rose again after fire destroyed the hall in 1950.' },
-  { year: 'Today', title: 'Modern Teresa', desc: 'A first-class municipality, home to Republic Cement Corporation and the award-winning Integrated Solid Waste Management Recovery Facility (ISWMMRF).' }
+  { year: 'Pre-Colonial', title: 'Mga Sinaunang Panahon', desc: 'Isang maliit na settlement sa pagitan ng Antipolo at Morong, mayaman sa likas na yaman — matabang lupa, malinis na ilog, at malinaw na bukal na umakit ng mga tao mula sa Morong.' },
+  { year: '1732', title: 'The Birth of Teresa', desc: 'Itinatag ang isang visita ng Nuestra Señora de Santa Rosa. Pagdating ng 1878, ang mga barrio ng Santa Rosa, Pantay, Prinza, at Buhangin ay kilala bilang Oroquieta.' },
+  { year: '1882', title: 'Named Teresa', desc: 'Sa pamamagitan ng isang Kastilang abogadong naglingkod nang walang bayad, naging bayan ang Oroquieta. Nagpugay ang mga residente at pinangalang TERESA bilang parangal sa kanyang ina, Doña Teresa.' },
+  { year: '1898', title: 'Revolution & Freedom', desc: 'Sumali ang mga matatapang na anak ng Teresa sa rebolusyon. Itinatag nina Col. Cornelio Garrovillas at Capt. Felipe Natividad ang isang pangkat ng Katipunan. Si Brigido C. Cruz ang napiling Presidente.' },
+  { year: '1919', title: 'An Independent Town', desc: 'Sa pamamagitan ng Executive Order No. 57 na nilagdaan ni Acting Governor-General Charles E. Yeater noong Disyembre 16, 1918, hiwalay ang Teresa sa Antipolo at naging malayang munisipalidad noong Enero 1, 1919.' },
+  { year: '1950s', title: 'Rebuilding & Modernity', desc: 'Sa ilalim ni Mayor Francisco C. Francisco (1952–1965), nakumpleto ang Teresa Waterworks at itinayo ang bagong municipal hall. Muling tumayo ang bayan matapos sunugin ng apoy ang gusali noong 1950.' },
+  { year: 'Today', title: 'Modern Teresa', desc: 'Isang first-class municipality, tahanan ng Republic Cement Corporation at ng award-winning Integrated Solid Waste Management Recovery Facility (ISWMMRF).' }
 ];
 
 export const glance = [
   { value: '1st', label: 'Class Municipality', sub: 'Income Classification' },
-  { value: '104', label: 'Public Documents', sub: 'In the Public Archive' },
+  { value: '104', label: 'Public Documents', sub: 'Sa Public Archive' },
   { value: '10', label: 'Elected Leaders', sub: 'Mayor, Vice Mayor & Councilors' },
   { value: '1919', label: 'Founded', sub: 'Independent Municipality' }
 ];
@@ -61,9 +61,9 @@ export const records = [
 ];
 
 export const projects = [
-  { name: 'Government Programs & Activities Report', cycle: 'Q4 2025', status: 'Completed report', detail: 'Consolidated quarterly report on municipal government projects, programs, and activities.', source: 'Municipal Public Document Archive' },
-  { name: 'Local Disaster Resilience Programs', cycle: 'Q2 2026', status: 'Published', detail: 'Latest verified fund utilization record for local disaster risk reduction and management.', source: 'Municipal Public Document Archive' },
-  { name: 'Special Education Fund Programs', cycle: 'Q2 2026', status: 'Published', detail: 'Latest verified utilization disclosure supporting local education programs.', source: 'Municipal Public Document Archive' }
+  { name: 'Government Programs & Activities Report', cycle: 'Q4 2025', status: 'Completed report', detail: 'Consolidated quarterly report tungkol sa mga municipal government projects, programs, at activities.', source: 'Municipal Public Document Archive' },
+  { name: 'Local Disaster Resilience Programs', cycle: 'Q2 2026', status: 'Published', detail: 'Pinakabagong verified fund utilization record para sa local disaster risk reduction at management.', source: 'Municipal Public Document Archive' },
+  { name: 'Special Education Fund Programs', cycle: 'Q2 2026', status: 'Published', detail: 'Pinakabagong verified utilization disclosure na sumusuporta sa mga local education programs.', source: 'Municipal Public Document Archive' }
 ];
 
 export const offices = [

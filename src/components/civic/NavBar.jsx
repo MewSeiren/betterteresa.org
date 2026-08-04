@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X, Search, ChevronDown } from 'lucide-react';
+import { Menu, X, Search, Phone, ChevronRight } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { hotlines } from '@/data/teresaData';
 
@@ -30,55 +30,67 @@ export default function NavBar() {
   const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="bg-[#0F2D2E] text-white">
+    <header className="fixed inset-x-0 top-0 z-50 bg-white">
+      {/* Utility bar */}
+      <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 text-xs sm:px-6">
           <div className="flex items-center gap-4 overflow-x-auto whitespace-nowrap">
             {hotlines.map(h => (
-              <a key={h.label} href={`tel:${h.number.replace(/[^0-9+]/g, '')}`} className="inline-flex items-center gap-1.5 hover:text-[#00E676]">
-                <Phone size={12} /> <span className="font-semibold">{h.label}:</span> {h.number}
+              <a key={h.label} href={`tel:${h.number.replace(/[^0-9+]/g, '')}`} className="inline-flex items-center gap-1.5 font-semibold text-slate-600 hover:text-[#1d4ed8]">
+                <Phone size={12} /> {h.label}: {h.number}
               </a>
             ))}
           </div>
           <div className="hidden items-center gap-4 md:flex">
-            <span>Teresa, Rizal</span>
-            <span className="text-white/40">|</span>
-            <span>{dateStr} · {timeStr} PHT</span>
+            <span className="font-semibold text-slate-600">Teresa, Rizal</span>
+            <span className="text-slate-300">|</span>
+            <span className="text-slate-500">{dateStr} · {timeStr} PHT</span>
           </div>
         </div>
       </div>
-      <div className={`border-b border-[#0F2D2E]/10 bg-white transition-shadow ${scrolled ? 'shadow-md' : ''}`}>
+      {/* Main nav */}
+      <div className={`border-b border-slate-200 bg-white transition-shadow ${scrolled ? 'shadow-sm' : ''}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <a href="#home" className="flex items-center gap-3">
-            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-11 w-11 rounded-lg object-contain bg-white" fittingType="fit" />
+            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain" fittingType="fit" />
             <div className="leading-tight">
-              <p className="text-lg font-black tracking-tight text-[#0F2D2E]">Better Teresa</p>
-              <p className="text-[11px] font-medium text-[#0F2D2E]/55">Community Portal · Municipality of Teresa, Rizal</p>
+              <p className="text-lg font-black tracking-tight text-slate-900">Better Teresa</p>
+              <p className="text-[11px] font-medium text-slate-500">A community-run portal for Teresa, Rizal</p>
             </div>
           </a>
           <nav className="hidden items-center gap-1 lg:flex">
             {navLinks.map(l => (
-              <a key={l.label} href={l.href} className="rounded-md px-3.5 py-2 text-sm font-semibold text-[#0F2D2E]/75 transition hover:bg-[#0F2D2E]/5 hover:text-[#0F2D2E]">{l.label}</a>
+              <a key={l.label} href={l.href} className="rounded-md px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900">{l.label}</a>
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <a href="https://teresarizal.gov.ph/services" target="_blank" rel="noreferrer" className="hidden rounded-lg bg-[#00B85C] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#00A04E] sm:inline-flex">Browse Services</a>
-            <button onClick={() => setOpen(true)} className="grid h-11 w-11 place-items-center rounded-lg border border-[#0F2D2E]/15 lg:hidden" aria-label="Open menu"><Menu size={20} /></button>
+            <button className="hidden items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-600 sm:inline-flex"><Search size={16} /> Search</button>
+            <a href="https://teresarizal.gov.ph/services" target="_blank" rel="noreferrer" className="hidden rounded-lg bg-[#1d4ed8] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#1e40af] sm:inline-flex">Browse Services</a>
+            <button onClick={() => setOpen(true)} className="grid h-11 w-11 place-items-center rounded-lg border border-slate-200 lg:hidden" aria-label="Open menu"><Menu size={20} /></button>
           </div>
         </div>
       </div>
+      {/* Announcement banner */}
+      <div className="bg-[#ef4444] text-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 text-sm sm:px-6">
+          <p className="flex items-center gap-2 font-medium"><span>🚀</span> Sumali sa #CivicTech Revolution — Tulungan mong itayo ang hinaharap ng Teresa sa pamamagitan ng teknolohiya.</p>
+          <a href="https://github.com/MewSeiren/betterteresa.org" target="_blank" rel="noreferrer" className="hidden shrink-0 items-center gap-1 rounded bg-white/15 px-3 py-1 text-xs font-bold hover:bg-white/25 sm:inline-flex">Sumali Now <ChevronRight size={14} /></a>
+        </div>
+      </div>
       {open && (
-        <div className="fixed inset-0 z-[70] bg-[#0F2D2E] p-6 text-white lg:hidden">
+        <div className="fixed inset-0 z-[70] bg-white p-6 lg:hidden">
           <div className="flex items-center justify-between">
-            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-10 w-10 rounded-lg object-contain bg-white" fittingType="fit" />
-            <span className="text-lg font-black">Better Teresa</span>
-            <button onClick={() => setOpen(false)} className="grid h-11 w-11 place-items-center" aria-label="Close menu"><X /></button>
+            <div className="flex items-center gap-3">
+              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-10 w-10 rounded-full object-contain" fittingType="fit" />
+              <span className="text-lg font-black text-slate-900">Better Teresa</span>
+            </div>
+            <button onClick={() => setOpen(false)} className="grid h-11 w-11 place-items-center" aria-label="Close menu"><X className="text-slate-700" /></button>
           </div>
           <nav className="mt-10 grid gap-2">
             {navLinks.map(l => (
-              <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="rounded-lg border-b border-white/10 py-4 text-2xl font-semibold">{l.label}</a>
+              <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="rounded-lg border-b border-slate-100 py-4 text-2xl font-semibold text-slate-800">{l.label}</a>
             ))}
-            <a href="https://teresarizal.gov.ph/services" target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="mt-4 rounded-lg bg-[#00B85C] px-4 py-3.5 text-center font-bold">Browse Services</a>
+            <a href="https://teresarizal.gov.ph/services" target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="mt-4 rounded-lg bg-[#1d4ed8] px-4 py-3.5 text-center font-bold text-white">Browse Services</a>
           </nav>
         </div>
       )}

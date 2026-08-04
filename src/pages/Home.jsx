@@ -13,7 +13,7 @@ import ScrollProgress from '@/components/civic/ScrollProgress';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-[#0F2D2E]">
+    <div className="min-h-screen bg-white text-slate-900">
       <ScrollProgress />
       <NavBar />
       <main>

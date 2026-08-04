@@ -92,10 +92,10 @@
     line-height: 1.6;
   }
   html { scroll-behavior: smooth; }
-  ::selection { background: #00E676; color: #0F2D2E; }
+  ::selection { background: #1d4ed8; color: #ffffff; }
 }
 
 @layer components {
-  .eyebrow { @apply mb-6 text-xs font-bold uppercase tracking-[.22em] text-[#0F2D2E]/50; }
-  .section-title { @apply text-[clamp(3rem,7vw,7.5rem)] font-black leading-[.86] tracking-[-.06em] text-[#0F2D2E]; }
+  .eyebrow { @apply mb-6 text-xs font-bold uppercase tracking-[.22em] text-[#1d4ed8]; }
+  .section-title { @apply text-[clamp(3rem,7vw,7.5rem)] font-black leading-[.86] tracking-[-.06em] text-[#0f172a]; }
 }
