@@ -32,7 +32,7 @@ export const services = [
 ];
 
 export const quickAccess = [
-  { title: 'Financial Reports', desc: 'Budget & income statements', icon: 'DollarSign', href: 'https://pda.teresarizal.gov.ph/' },
+  { title: 'Financial Reports', desc: 'Budget & income statements', icon: 'Peso', href: 'https://pda.teresarizal.gov.ph/' },
   { title: 'Infrastructure', desc: 'Track ongoing projects', icon: 'Building2', href: '#transparency' },
   { title: 'Legislation', desc: 'Ordinances & resolutions', icon: 'Gavel', href: '#transparency' },
   { title: 'Statistics', desc: 'Population & demographics', icon: 'BarChart3', href: '#glance' }

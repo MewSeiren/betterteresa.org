@@ -3,7 +3,9 @@ import { FileText, Building2, Gavel, BarChart3, DollarSign, ArrowRight } from 'l
 import { quickAccess } from '@/data/teresaData';
 import { useLang } from '@/lib/LanguageContext';
 
-const icons = { FileText, Building2, Gavel, BarChart3, DollarSign };
+const icons = { FileText, Building2, Gavel, BarChart3 };
+
+const Peso = () => <span className="text-[22px] font-black leading-none">₱</span>;
 
 export default function QuickAccess() {
   const { t } = useLang();
@@ -19,7 +21,7 @@ export default function QuickAccess() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {quickAccess.map(q => {
-            const Icon = icons[q.icon] || FileText;
+            const Icon = q.icon === 'Peso' ? Peso : (icons[q.icon] || FileText);
             return (
               <a key={q.title} href={q.href} target={q.href.startsWith('http') ? '_blank' : undefined} rel={q.href.startsWith('http') ? 'noreferrer' : undefined} className="group rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-[#1a73e8] hover:shadow-lg">
                 <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-[#1a73e8]/10 text-[#1a73e8] transition group-hover:bg-[#1a73e8] group-hover:text-white"><Icon size={22} /></div>
