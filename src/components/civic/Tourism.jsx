@@ -32,30 +32,25 @@ export default function Tourism() {
           <p className="mt-2 px-2 pb-1 text-xs text-slate-400">{t('tm.mapCredit')}</p>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+        <h3 className="mt-10 text-sm font-bold uppercase tracking-wider text-[#0a1a35]">{t('tm.spotsTitle')}</h3>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CATS.map(c => (
-            <span key={c.key} className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600">
-              <span className="h-3 w-3 rounded-full" style={{ backgroundColor: c.color }} /> {t(c.key)}
-            </span>
-          ))}
-        </div>
-
-        <h3 className="mt-8 text-sm font-bold uppercase tracking-wider text-[#0a1a35]">{t('tm.spotsTitle')}</h3>
-        <div className="mt-4 space-y-6">
-          {CATS.map(c => (
-            <div key={c.key}>
-              <div className="mb-3 flex items-center gap-2">
+            <div key={c.key} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="flex items-center gap-2.5 border-b border-slate-100 px-5 py-3.5" style={{ backgroundColor: `${c.color}12` }}>
                 <span className="h-3.5 w-3.5 rounded-full" style={{ backgroundColor: c.color }} />
-                <p className="text-sm font-black text-[#0a1a35]">{t(c.key)}</p>
-                <span className="text-xs font-semibold text-slate-400">{c.spots.length}</span>
+                <h3 className="flex-1 text-sm font-black text-[#0a1a35]">{t(c.key)}</h3>
+                <span className="rounded-full bg-white/70 px-2 py-0.5 text-xs font-bold text-slate-500">{c.spots.length}</span>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <ul className="p-2">
                 {c.spots.map(s => (
-                  <a key={s} href={gmap(s)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-sm font-semibold text-slate-700 transition hover:border-[#1a73e8] hover:text-[#1a73e8]">
-                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.color }} /> {s}
-                  </a>
+                  <li key={s}>
+                    <a href={gmap(s)} target="_blank" rel="noreferrer" className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-[#f8f9fa] hover:text-[#1a73e8]">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: c.color }} />
+                      <span className="truncate">{s}</span>
+                    </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
