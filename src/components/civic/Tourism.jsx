@@ -1,53 +1,23 @@
 import React from 'react';
-import { Church, Mountain, Leaf, Landmark, Waves, Palette, MapPin, ArrowUpRight } from 'lucide-react';
+import { Image } from '@/components/ui/image';
 import { useLang } from '@/lib/LanguageContext';
 
-const inTeresa = [
-  { icon: Church, title: 'St. Rose de Lima Parish Church',
-    en: "Teresa\u2019s heritage parish in the town proper — a landmark of faith and community dating to the Spanish era.",
-    fil: "Heritage parish ng Teresa sa bayan — isang landmark ng pananampalataya at komunidad mula pa sa panahon ng Espanyol.",
-    href: 'https://www.google.com/maps/search/St+Rose+de+Lima+Parish+Teresa+Rizal' },
-  { icon: Mountain, title: 'Sierra Madre Foothills & Sunset Views',
-    en: 'Scenic mountain backdrops, hiking trails, and golden-hour viewpoints along Teresa\u2019s highland barrios.',
-    fil: 'Magagandang mountain backdrop, hiking trails, at golden-hour na viewpoint sa mga highland na barangay ng Teresa.',
-    href: 'https://www.google.com/maps/search/Teresa+Rizal+viewpoint' },
-  { icon: Leaf, title: 'ISWMMRF Eco-Park & Agri-Tourism',
-    en: "Teresa\u2019s award-winning Integrated Solid Waste Management Recovery Facility and surrounding farmlands showcase green innovation and rural life.",
-    fil: 'Gantimpalang ISWMMRF ng Teresa at mga kalapit na bukid na nagpapakita ng berdeng inobasyon at rural na pamumuhay.',
-    href: 'https://teresarizal.gov.ph/services/menro' }
-];
+const MAP_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/a834e57dc_TeresaTourismSpotsLocatorMap.png';
 
-const nearby = [
-  { icon: Landmark, title: 'Antipolo Cathedral',
-    en: 'Shrine of Our Lady of Peace and Good Voyage — a major pilgrimage site just minutes from Teresa.',
-    fil: 'Shrine of Our Lady of Peace and Good Voyage — isang malaking pilgrimage site na ilang minuto lang mula sa Teresa.',
-    href: 'https://en.wikipedia.org/wiki/Antipolo_Cathedral' },
-  { icon: Waves, title: 'Hinulugang Taktak',
-    en: "Rizal\u2019s iconic waterfall national park in Antipolo, a protected natural landmark.",
-    fil: 'Sikat na waterfall national park ng Rizal sa Antipolo, isang protektadong natural na landmark.',
-    href: 'https://en.wikipedia.org/wiki/Hinulugang_Taktak' },
-  { icon: Palette, title: 'Pinto Art Museum',
-    en: 'An open-air contemporary art museum set in the cool hills of Antipolo.',
-    fil: 'Open-air na contemporary art museum sa malamig na burol ng Antipolo.',
-    href: 'https://en.wikipedia.org/wiki/Pinto_Art_Museum' },
-  { icon: Mountain, title: 'Angono Petroglyphs',
-    en: 'The oldest known rock engravings in the Philippines — a UNESCO tentative heritage site near Angono.',
-    fil: 'Pinakalumang kilalang rock carving sa Pilipinas — isang UNESCO tentative heritage site malapit sa Angono.',
-    href: 'https://en.wikipedia.org/wiki/Angono_Petroglyphs' }
+const gmap = (name) => `https://www.google.com/maps/search/${encodeURIComponent(name + ', Teresa, Rizal')}`;
+
+const CATS = [
+  { key: 'tm.catChurch', color: '#8CC63F', spots: ['St. Rose of Lima Parish Church'] },
+  { key: 'tm.catResort', color: '#F7941E', spots: ['Manny Mansion Private Resort', "Marden\u2019s Place Private Resort", "Tita El\u2019s Place Private Resort", 'Yasak Resort', 'Rancho Felipe', 'Rancho Bravo'] },
+  { key: 'tm.catParks', color: '#EC008C', spots: ['Quest Adventure Camp', 'Sidetrip'] },
+  { key: 'tm.catFood', color: '#0071BC', spots: ['Ancla Coffee', "Greyson\u2019s Dimsum and Noodles", 'Thirteen Thirty Cafe', "Dad\u2019s Burger & House of Unlimited", "Ysabelle\u2019s Garden", 'Cafe Amelita', "Aurora\u2019s Place", 'Kamayan sa Palayan', "Kokoyito\u2019s Sizzling Hauz", "Eat\u2019s Takoyummy Food Hub", 'Gocca Coffee', 'Balai Urunjing', "Leof\u2019s Food House", "MJ\u2019s Burger", "Pinoy\u2019s Tsibug", "Teresa\u2019s Mais at Mani", "Timplado\u2019s Cuisine", 'Samgville 199', "Amara\u2019s Corner", "Jhayco\u2019s Grill and Restaurant", 'Wish Upon a Cake'] },
+  { key: 'tm.catRental', color: '#92278F', spots: ['Dictadel Swimming Pool Rental', 'Simon De La Casa'] },
+  { key: 'tm.catIndustrial', color: '#00AEEF', spots: ['Integrated Solid Waste Management Facility (MRF)'] },
+  { key: 'tm.catOthers', color: '#29ABE2', spots: ['Sarian Exotic Farm'] }
 ];
 
 export default function Tourism() {
-  const { t, lang } = useLang();
-  const Card = ({ c }) => {
-    const Icon = c.icon;
-    return (
-      <a href={c.href} target="_blank" rel="noreferrer" className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-[#1a73e8] hover:shadow-lg">
-        <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-[#1a73e8]/10 text-[#1a73e8] transition group-hover:bg-[#1a73e8] group-hover:text-white"><Icon size={22} /></div>
-        <h3 className="flex items-start justify-between gap-2 font-bold text-[#0a1a35]">{c.title} <ArrowUpRight size={16} className="mt-0.5 shrink-0 text-slate-300 transition group-hover:text-[#1a73e8]" /></h3>
-        <p className="mt-2 text-sm leading-relaxed text-slate-500">{lang === 'fil' ? c.fil : c.en}</p>
-      </a>
-    );
-  };
+  const { t } = useLang();
   return (
     <section id="tourism" className="bg-[#f8f9fa] py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -56,13 +26,38 @@ export default function Tourism() {
           <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">{t('tm.title')}</h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">{t('tm.desc')}</p>
         </div>
-        <p className="mb-3 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0a1a35]"><MapPin size={13} className="text-[#1a73e8]" /> {t('tm.inTeresa')}</p>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {inTeresa.map(c => <Card key={c.title} c={c} />)}
+
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+          <Image src={MAP_URL} alt="Teresa Tourism Spots Locator Map" fittingType="fit" className="w-full" />
+          <p className="mt-2 px-2 pb-1 text-xs text-slate-400">{t('tm.mapCredit')}</p>
         </div>
-        <p className="mb-3 mt-10 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0a1a35]"><MapPin size={13} className="text-[#1a73e8]" /> {t('tm.nearby')}</p>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {nearby.map(c => <Card key={c.title} c={c} />)}
+
+        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+          {CATS.map(c => (
+            <span key={c.key} className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600">
+              <span className="h-3 w-3 rounded-full" style={{ backgroundColor: c.color }} /> {t(c.key)}
+            </span>
+          ))}
+        </div>
+
+        <h3 className="mt-8 text-sm font-bold uppercase tracking-wider text-[#0a1a35]">{t('tm.spotsTitle')}</h3>
+        <div className="mt-4 space-y-6">
+          {CATS.map(c => (
+            <div key={c.key}>
+              <div className="mb-3 flex items-center gap-2">
+                <span className="h-3.5 w-3.5 rounded-full" style={{ backgroundColor: c.color }} />
+                <p className="text-sm font-black text-[#0a1a35]">{t(c.key)}</p>
+                <span className="text-xs font-semibold text-slate-400">{c.spots.length}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {c.spots.map(s => (
+                  <a key={s} href={gmap(s)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-sm font-semibold text-slate-700 transition hover:border-[#1a73e8] hover:text-[#1a73e8]">
+                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.color }} /> {s}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
