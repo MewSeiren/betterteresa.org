@@ -1,0 +1,3 @@
+import React, { useEffect, useState } from 'react';
+
+export default function ScrollProgress(){const [progress,setProgress]=useState(0);useEffect(()=>{const update=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;setProgress(max?window.scrollY/max:0)};update();window.addEventListener('scroll',update,{passive:true});return()=>window.removeEventListener('scroll',update)},[]);return <div aria-hidden="true" className="fixed left-0 right-0 top-0 z-[60] h-[3px] bg-[#0F2D2E]/10"><div className="h-full origin-left bg-[#00E676] transition-transform duration-150" style={{transform:`scaleX(${progress})`}}/></div>}

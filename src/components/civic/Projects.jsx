@@ -1,0 +1,9 @@
+import React, { useState } from 'react';
+import { Plus, X, ExternalLink } from 'lucide-react';
+import { Image } from '@/components/ui/image';
+import { projects } from '@/data/teresaData';
+
+export default function Projects(){const [active,setActive]=useState(null);return <section id="projects" className="border-b border-[#0F2D2E]/15 bg-white py-24">
+ <div className="grid gap-12 px-6 sm:px-12 lg:grid-cols-[.85fr_1.15fr] lg:px-16 xl:px-24"><div><p className="eyebrow">02 · Projects & programs</p><h2 className="section-title">Progress,<br/>with receipts.</h2><Image src="https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/7029334df_generated_c0a8ef7f.png" alt="A completed public space representing local infrastructure" className="mt-10 h-72 w-full rounded-sm"/></div>
+ <div className="self-end">{projects.map((p,i)=><article key={p.name} className="border-t border-[#0F2D2E]/20"><button onClick={()=>setActive(active===i?null:i)} className="grid min-h-28 w-full grid-cols-[1fr_auto] items-center gap-6 py-6 text-left"><div><p className="text-xs font-bold uppercase tracking-widest text-[#00A854]">{p.status} · {p.cycle}</p><h3 className="mt-2 text-2xl font-bold tracking-tight text-[#0F2D2E]">{p.name}</h3></div>{active===i?<X/>:<Plus/>}</button>{active===i&&<div className="mb-7 grid gap-5 border-l-2 border-[#00E676] bg-[#F4F7F6] p-6"><p className="max-w-2xl text-lg leading-7 text-[#0F2D2E]/75">{p.detail}</p><div><p className="text-xs font-bold uppercase tracking-widest text-[#0F2D2E]/50">Primary source</p><p className="mt-1 font-bold">{p.source}</p></div><a href="https://pda.teresarizal.gov.ph/" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 font-bold">Inspect source record <ExternalLink size={16}/></a></div>}</article>)}</div></div>
+ </section>}
