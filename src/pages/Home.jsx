@@ -25,21 +25,21 @@ export default function Home() {
         <Services />
         <Tourism />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
-            <div className="space-y-8">
-              <Glance />
-              <History />
-              <FacebookUpdates />
-            </div>
-            <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-              <Weather />
-              <Government />
-              <Transparency />
-            </aside>
+          <Glance />
+        </div>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <History />
+        </div>
+        <Government />
+        <Transparency />
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Weather />
+            <FacebookUpdates />
           </div>
-          <div className="mt-8">
-            <Contact />
-          </div>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
+          <Contact />
         </div>
       </main>
       <CivicFooter />
