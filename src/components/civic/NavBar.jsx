@@ -49,7 +49,7 @@ export default function NavBar() {
       <div className={`border-b border-slate-200 bg-white transition-shadow ${scrolled ? 'shadow-sm' : ''}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <a href="#home" className="flex items-center gap-3">
-            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-11 w-11 rounded-full object-contain drop-shadow-[0_0_8px_rgba(26,115,232,0.45)]" fittingType="fit" />
+            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-14 w-14 rounded-full object-contain drop-shadow-[0_0_10px_rgba(26,115,232,0.5)]" fittingType="fit" />
             <div className="leading-tight">
               <p className="text-lg font-black tracking-tight text-[#0a1a35]">Better Teresa</p>
               <span className="mt-1 inline-block rounded bg-[#1a73e8]/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-[#1a73e8]">.ORG</span>
@@ -69,7 +69,7 @@ export default function NavBar() {
         <div className="fixed inset-0 z-[70] bg-white p-6 lg:hidden">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-10 w-10 rounded-full object-contain" fittingType="fit" />
+              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-14 w-14 rounded-full object-contain" fittingType="fit" />
               <span className="text-lg font-black text-[#0a1a35]">Better Teresa</span>
             </div>
             <button onClick={() => setOpen(false)} className="grid h-11 w-11 place-items-center" aria-label="Close menu"><X className="text-slate-700" /></button>
