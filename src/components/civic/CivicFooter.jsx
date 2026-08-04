@@ -1,11 +1,11 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 export default function CivicFooter() {
   return (
     <footer className="bg-[#0F2D2E] px-4 py-12 text-white sm:px-6">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-lg bg-white text-[#0F2D2E]"><span className="font-black">T</span></div>
@@ -38,10 +38,15 @@ export default function CivicFooter() {
               <li><a href="https://www.gov.ph/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white">Official Gov.ph <ExternalLink size={13} /></a></li>
             </ul>
           </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#00E676]">Open Source</p>
+            <p className="text-sm text-white/60">This portal is open source. Contribute, report issues, or fork the project on GitHub.</p>
+            <a href="https://github.com/betterteresa" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"><Github size={16} /> github.com/betterteresa</a>
+          </div>
         </div>
         <div className="mt-6 flex flex-wrap justify-between gap-3 text-xs text-white/45">
           <p>Better Teresa · Independent public-interest interface</p>
-          <p>Built on the BetterGov.ph open-source template · Sources: Municipality of Teresa · COA · DBM</p>
+          <p>Open source on GitHub · github.com/betterteresa · Sources: Municipality of Teresa · COA · DBM</p>
         </div>
       </div>
     </footer>
