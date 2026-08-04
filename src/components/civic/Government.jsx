@@ -44,13 +44,13 @@ export default function Government() {
         <h3 className="mt-8 mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">{t('gv.exOfficio')}</h3>
         <div className="grid gap-3 sm:grid-cols-2">
           {exOff.map(o => (
-            <div key={o.name} className="rounded-2xl border border-slate-200 bg-white p-4">
+            <div key={o.name} className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white p-4">
               <div className="flex items-center gap-3">
                 <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#e8eff7] text-sm font-black text-[#1565c0]">{o.initials}</div>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-bold text-[#0a1a35]">{o.name}</p>
+                  <span className="mt-1 inline-block rounded-full bg-[#e8eff7] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#1565c0]">{t('gv.exOfficio')}</span>
                 </div>
-                <span className="shrink-0 rounded-full bg-[#e8eff7] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#1565c0]">{t('gv.exOfficio')}</span>
               </div>
               <p className="mt-2 text-xs leading-snug text-slate-500">{o.focus}</p>
             </div>
