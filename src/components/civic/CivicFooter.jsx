@@ -1,20 +1,20 @@
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Globe } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { useLang } from '@/lib/LanguageContext';
 
-const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/4f5fc7227_ChatGPTImageAug4202608_12_14PM.png';
+const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/ee5788f6f_ChatGPTImageAug4202610_03_36PM.png';
 
 export default function CivicFooter() {
   const { t } = useLang();
   return (
     <footer className="bg-[#0a1a35] px-4 py-12 text-white sm:px-6">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-8 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-6">
           <div>
             <div className="flex items-center gap-3">
               <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-16 w-16 rounded-full object-contain drop-shadow-[0_0_14px_rgba(96,165,250,0.7)]" fittingType="fit" />
-              <p className="text-lg font-black">Better Teresa</p>
+              <p className="text-lg font-black">Better Teresa<span className="ml-1 align-top text-[10px] font-bold tracking-wider text-[#60a5fa]">.ORG</span></p>
             </div>
             <p className="mt-4 text-sm text-white/60">{t('ft.tagline')}</p>
           </div>
@@ -48,6 +48,14 @@ export default function CivicFooter() {
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{t('ft.opensource')}</p>
             <p className="text-sm text-white/60">{t('ft.osDesc')}</p>
             <a href="https://github.com/MewSeiren/betterteresa.org" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"><Github size={16} /> View on GitHub <ExternalLink size={12} className="opacity-70" /></a>
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">BetterGov</p>
+            <a href="https://lgu.bettergov.ph/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2.5 text-sm font-bold text-white transition hover:text-[#60a5fa]">
+              <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-[#1a73e8] to-[#0a3a8c] text-white shadow-lg"><Globe size={18} /></span>
+              <span className="leading-tight">BetterGov.ph<br /><span className="text-xs font-medium text-white/55">LGU Directory</span></span>
+            </a>
+            <p className="mt-3 text-xs text-white/45">A community-maintained directory of Better LGU transparency portals.</p>
           </div>
         </div>
         <div className="mt-6 flex flex-wrap justify-between gap-3 text-xs text-white/45">

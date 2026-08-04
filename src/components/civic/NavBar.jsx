@@ -3,7 +3,7 @@ import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { useLang } from '@/lib/LanguageContext';
 
-const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/4f5fc7227_ChatGPTImageAug4202608_12_14PM.png';
+const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/ee5788f6f_ChatGPTImageAug4202610_03_36PM.png';
 
 export default function NavBar() {
   const { t, lang, setLang } = useLang();
