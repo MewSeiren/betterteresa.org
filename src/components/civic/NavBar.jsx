@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X, Search, ChevronDown } from 'lucide-react';
+import { Image } from '@/components/ui/image';
 import { hotlines } from '@/data/teresaData';
+
+const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/c8d4c5f01_ChatGPTImageAug4202607_39_14PM.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -47,9 +50,7 @@ export default function NavBar() {
       <div className={`border-b border-[#0F2D2E]/10 bg-white transition-shadow ${scrolled ? 'shadow-md' : ''}`}>
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <a href="#home" className="flex items-center gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-lg bg-[#0F2D2E] text-white">
-              <span className="text-lg font-black">T</span>
-            </div>
+            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-11 w-11 rounded-lg object-contain bg-white" fittingType="fit" />
             <div className="leading-tight">
               <p className="text-lg font-black tracking-tight text-[#0F2D2E]">Better Teresa</p>
               <p className="text-[11px] font-medium text-[#0F2D2E]/55">Community Portal · Municipality of Teresa, Rizal</p>
@@ -69,6 +70,7 @@ export default function NavBar() {
       {open && (
         <div className="fixed inset-0 z-[70] bg-[#0F2D2E] p-6 text-white lg:hidden">
           <div className="flex items-center justify-between">
+            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-10 w-10 rounded-lg object-contain bg-white" fittingType="fit" />
             <span className="text-lg font-black">Better Teresa</span>
             <button onClick={() => setOpen(false)} className="grid h-11 w-11 place-items-center" aria-label="Close menu"><X /></button>
           </div>
