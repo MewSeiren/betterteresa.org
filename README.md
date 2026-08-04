@@ -1,77 +1,67 @@
-# Base44 Project
+# Better Teresa (betterteresa.org)
 
-Use this repository to run and edit the app locally, then publish changes back through Base44.
+Better Teresa is a volunteer-run civic portal for the Municipality of Teresa, Rizal. This platform is dedicated to making local government data transparent, accessible, and easy to navigate for all citizens.
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+## Project Vision
+Our goal is to foster an informed and engaged community by providing a centralized, verified, and open-source interface for municipal services, public records, and government transparency data.
 
-## Prerequisites
+## Features
+- **Municipal Services Directory:** Quick access to official government service portals.
+- **Transparency Dashboard:** Real-time access to budget disclosures, legislative ordinances, and project status updates.
+- **Local Government Directory:** Contact information for municipal offices and elected representatives.
+- **Public Records Archive:** Integrated search for verified government documents.
 
-1. Clone the repository using the project's Git URL.
-2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
-4. Install the Base44 CLI: `npm install -g base44@latest`.
+## Tech Stack
+- **Framework:** React
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Design Pattern:** BetterLGU Open-Source Template
 
-See the [Base44 CLI docs](https://docs.base44.com/developers/references/cli/get-started/overview) if you want to run Base44 commands directly.
+## Local Development
 
-## Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MewSeiren/betterteresa.org.git
+   cd betterteresa.org
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the local URL printed by Vite in your browser.
 
-Run the full local development environment from the project root:
-
-```bash
-base44 dev
+## Project Structure
+```
+src/
+├── components/civic/   # Civic section components (Hero, Services, Government, etc.)
+├── data/                # Centralized municipal data source
+├── pages/               # Application pages
+└── App.jsx             # Main router
 ```
 
-`base44 dev` starts the local Base44 development backend and, when this app is configured for it, also starts the frontend dev server for you. Use the frontend URL printed by the command.
+## How to Contribute
+We welcome contributions from developers, designers, and residents of Teresa.
+1. **Fork the repository.**
+2. **Explore the issues:** Check the "Issues" tab for tasks tagged as `good first issue`.
+3. **Submit a Pull Request:** Ensure your changes are well-documented and follow the existing code style.
 
-For example, when the Base44 project config includes a `serveCommand`, `base44 dev` can launch the frontend too:
+## Data Sourcing
+This portal exclusively displays verified facts from official government sources, including:
+- [Official Municipal Portal of Teresa](https://teresarizal.gov.ph)
+- [Public Document Archive](https://pda.teresarizal.gov.ph/)
+- [Commission on Audit (COA)](https://www.coa.gov.ph/)
+- [DBM Open Budget Portal](https://www.dbm.gov.ph/index.php/dbm-open-budget-portal)
 
-```json5
-{
-  "site": {
-    "serveCommand": "npm run dev"
-  }
-}
-```
+*Better Teresa is an independent, community-driven initiative and is not an official government website.*
 
-In a Base44 project this lives in `base44/config.jsonc`.
+## License
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
-## Run Only The Frontend
-
-If you only want to work on the frontend against the hosted Base44 backend, run:
-
-```bash
-npm run dev
-```
-
-Open the local URL printed by Vite.
-
-## Use The Hosted Backend
-
-For frontend-only development, create or update `.env.local` in the project root:
-
-```bash
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=https://your-app.base44.app
-```
-
-`VITE_BASE44_APP_ID` identifies the Base44 app.
-
-`VITE_BASE44_APP_BASE_URL` tells the Base44 Vite plugin where to send local `/api` requests. Point it at your deployed Base44 app URL when you want the local frontend to use the hosted backend.
-
-When you use `base44 dev`, the command injects the local Base44 values for you, so `.env.local` is mainly needed for frontend-only workflows.
-
-## Publish Your Changes
-
-After pushing your changes to git, open the Base44 dashboard and publish the app:
-
-```bash
-base44 dashboard open
-```
-
-## Docs & Support
-
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
-
-Base44 CLI command reference: [https://docs.base44.com/developers/references/cli/commands/introduction](https://docs.base44.com/developers/references/cli/commands/introduction)
-
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+## Contact
+- **Website:** [betterteresa.org](https://betterteresa.org)
+- **GitHub:** [github.com/MewSeiren/betterteresa.org](https://github.com/MewSeiren/betterteresa.org)
+- **Facebook:** [facebook.com/lguteresarizal](https://www.facebook.com/lguteresarizal)
