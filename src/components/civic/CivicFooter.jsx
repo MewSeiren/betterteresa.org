@@ -1,4 +1,49 @@
 import React from 'react';
-import { Facebook, MapPin, Phone, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-export default function CivicFooter(){return <footer className="bg-[#0F2D2E] px-6 py-16 text-white sm:px-12 lg:px-16 xl:px-24"><div className="grid gap-12 lg:grid-cols-[1fr_.8fr]"><div><p className="text-xs font-bold uppercase tracking-[.25em] text-[#00E676]">Municipal assistance</p><a href="tel:+63282506800" className="mt-5 block text-[clamp(2.5rem,6vw,5.5rem)] font-black leading-none tracking-[-.05em]">(02) 8250-6800</a><p className="mt-5 max-w-xl text-white/60">For urgent local assistance and municipal service concerns. For life-threatening emergencies, call 911.</p></div><div className="grid content-end gap-4 text-sm"><a href="https://maps.google.com/?q=Municipal+Hall+Teresa+Rizal" target="_blank" rel="noreferrer" className="flex min-h-12 items-center gap-3"><MapPin className="text-[#00E676]"/>Corazon C. Aquino Ave., Poblacion, Teresa, Rizal</a><a href="https://www.facebook.com/lguteresarizal" target="_blank" rel="noreferrer" className="flex min-h-12 items-center gap-3"><Facebook className="text-[#00E676]"/>Official Facebook page</a><a href="https://teresarizal.gov.ph" target="_blank" rel="noreferrer" className="flex min-h-12 items-center gap-3"><ExternalLink className="text-[#00E676]"/>Official municipal portal</a><div className="flex flex-wrap gap-x-6"><a href="https://www.coa.gov.ph/" target="_blank" rel="noreferrer" className="flex min-h-12 items-center gap-2 text-white/70 hover:text-white">COA <ExternalLink size={14}/></a><a href="https://www.dbm.gov.ph/index.php/dbm-open-budget-portal" target="_blank" rel="noreferrer" className="flex min-h-12 items-center gap-2 text-white/70 hover:text-white">DBM Open Budget <ExternalLink size={14}/></a></div></div></div><div className="mt-16 flex flex-wrap justify-between gap-4 border-t border-white/15 pt-6 text-xs text-white/45"><p>Better Teresa · Independent public-interest interface</p><p>Sources: Municipality of Teresa · Public Document Archive · COA · DBM</p></div></footer>}
+export default function CivicFooter() {
+  return (
+    <footer className="bg-[#0F2D2E] px-4 py-12 text-white sm:px-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-8 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="grid h-10 w-10 place-items-center rounded-lg bg-white text-[#0F2D2E]"><span className="font-black">T</span></div>
+              <p className="text-lg font-black">Better Teresa</p>
+            </div>
+            <p className="mt-4 text-sm text-white/60">A volunteer-run community portal for the Municipality of Teresa, Province of Rizal.</p>
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#00E676]">Explore</p>
+            <ul className="grid gap-2 text-sm text-white/70">
+              <li><a href="#services" className="hover:text-white">Services</a></li>
+              <li><a href="#government" className="hover:text-white">Government</a></li>
+              <li><a href="#transparency" className="hover:text-white">Transparency</a></li>
+              <li><a href="#contact" className="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#00E676]">Official Sources</p>
+            <ul className="grid gap-2 text-sm text-white/70">
+              <li><a href="https://teresarizal.gov.ph" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white">Municipal Portal <ExternalLink size={13} /></a></li>
+              <li><a href="https://pda.teresarizal.gov.ph/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white">Public Document Archive <ExternalLink size={13} /></a></li>
+              <li><a href="https://www.facebook.com/lguteresarizal" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white">Facebook Page <ExternalLink size={13} /></a></li>
+            </ul>
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#00E676]">National Data Sources</p>
+            <ul className="grid gap-2 text-sm text-white/70">
+              <li><a href="https://www.coa.gov.ph/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white">Commission on Audit (COA) <ExternalLink size={13} /></a></li>
+              <li><a href="https://www.dbm.gov.ph/index.php/dbm-open-budget-portal" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white">DBM Open Budget Portal <ExternalLink size={13} /></a></li>
+              <li><a href="https://www.gov.ph/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-white">Official Gov.ph <ExternalLink size={13} /></a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-wrap justify-between gap-3 text-xs text-white/45">
+          <p>Better Teresa · Independent public-interest interface</p>
+          <p>Built on the BetterGov.ph open-source template · Sources: Municipality of Teresa · COA · DBM</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

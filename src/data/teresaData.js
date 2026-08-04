@@ -1,14 +1,54 @@
+export const hotlines = [
+  { label: 'Municipal Hall', number: '(02) 8250-6800' },
+  { label: 'Emergency', number: '911' }
+];
+
 export const officials = [
-  { name: 'Rodel N. Dela Cruz', role: 'Municipal Mayor', initials: 'RD', focus: 'Office of the Municipal Mayor', contact: 'mayorsoffice@teresarizal.gov.ph' },
-  { name: 'Freddie L. Bonifacio', role: 'Vice Mayor', initials: 'FB', focus: 'Sangguniang Bayan', contact: '(02) 8250-6800' },
+  { name: 'Rodel N. Dela Cruz', role: 'Municipal Mayor', initials: 'RD', focus: 'Office of the Municipal Mayor', email: 'mayorsoffice@teresarizal.gov.ph' },
+  { name: 'Freddie L. Bonifacio', role: 'Vice Mayor', initials: 'FB', focus: 'Sangguniang Bayan', email: '(02) 8250-6800' },
   { name: 'John Gregor S.B. Pascual', role: 'Councilor', initials: 'JP', focus: 'Health, Social Service & Public Information' },
   { name: 'Minerva S.G. Marcelino', role: 'Councilor', initials: 'MM', focus: 'Tourism, Family Welfare & Public Safety' },
   { name: 'Fernand N. Dela Cruz', role: 'Councilor', initials: 'FD', focus: 'Environment, Finance & Appropriations' },
-  { name: 'Anthony S. Damaso', role: 'Councilor', initials: 'AD', focus: 'Ordinances, Trade & Economic Enterprises' },
+  { name: 'Anthony S. Damasio', role: 'Councilor', initials: 'AD', focus: 'Ordinances, Trade & Economic Enterprises' },
   { name: 'Joker A. Santos', role: 'Councilor', initials: 'JS', focus: 'Housing, Land Use & Public Works' },
   { name: 'Aurelio G. Selibio, Jr.', role: 'Councilor', initials: 'AS', focus: 'Good Governance, Agriculture & Livelihood' },
   { name: 'Juvith E.S. Sto. Tomas', role: 'Councilor', initials: 'JT', focus: 'Transport, Communication & Amusements' },
   { name: 'Victorious Joshua T. San Jose', role: 'Councilor', initials: 'VS', focus: 'Education, Culture & Employment' }
+];
+
+export const services = [
+  { title: 'Certificates & Vital Records', desc: 'Birth, marriage, and death certificates and other civil registry documents.', icon: 'FileText', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Business Permits & Licensing', desc: 'New business permits, renewals, and trade registration.', icon: 'Briefcase', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Tax Payments', desc: 'Real property tax, business tax, and tax clearance services.', icon: 'Receipt', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Social Services & Assistance', desc: 'Senior citizen, PWD, and welfare programs.', icon: 'HeartHandshake', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Health Services', desc: 'Medical assistance, vaccination programs, and health certificates.', icon: 'Stethoscope', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Infrastructure & Public Works', desc: 'Construction permits, road maintenance, and public facilities.', icon: 'HardHat', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Education & Scholarship', desc: 'Scholarship programs and student assistance.', icon: 'GraduationCap', href: 'https://teresarizal.gov.ph/services' },
+  { title: 'Agriculture & Livelihood', desc: 'Agricultural support, crop insurance, and training programs.', icon: 'Wheat', href: 'https://teresarizal.gov.ph/services' }
+];
+
+export const quickAccess = [
+  { title: 'Financial Reports', desc: 'Budget & income statements', icon: 'DollarSign', href: 'https://pda.teresarizal.gov.ph/' },
+  { title: 'Infrastructure', desc: 'Track municipal projects', icon: 'Building2', href: '#projects' },
+  { title: 'Legislation', desc: 'Ordinances & resolutions', icon: 'Gavel', href: '#records' },
+  { title: 'Statistics', desc: 'Population & demographics', icon: 'BarChart3', href: '#glance' }
+];
+
+export const history = [
+  { year: 'Pre-Colonial', title: 'Mga Sinaunang Panahon', desc: 'A small settlement between Antipolo and Morong, rich in natural resources — fertile land, clean rivers, and crystalline springs that drew people from Morong.' },
+  { year: '1732', title: 'The Birth of Teresa', desc: 'A visita of Nuestra Señora de Santa Rosa was established. By 1878 the barrios of Santa Rosa, Pantay, Prinza, and Buhangin were known as Oroquieta.' },
+  { year: '1882', title: 'Named Teresa', desc: 'Through a Spanish lawyer who served without pay, Oroquieta became a town. Grateful residents named it TERESA in honor of his mother, Doña Teresa.' },
+  { year: '1898', title: 'Revolution & Freedom', desc: 'Brave men of Teresa joined the revolution. Col. Cornelio Garrovillas and Capt. Felipe Natividad founded a Katipunan group. Brigido C. Cruz was chosen President.' },
+  { year: '1919', title: 'An Independent Town', desc: 'Through Executive Order No. 57 signed by Acting Governor-General Charles E. Yeater on December 16, 1918, Teresa separated from Antipolo and became an independent municipality on January 1, 1919.' },
+  { year: '1950s', title: 'Rebuilding & Modernity', desc: 'Under Mayor Francisco C. Francisco (1952–1965), the Teresa Waterworks was completed and a new municipal hall built. The town rose again after fire destroyed the hall in 1950.' },
+  { year: 'Today', title: 'Modern Teresa', desc: 'A first-class municipality, home to Republic Cement Corporation and the award-winning Integrated Solid Waste Management Recovery Facility (ISWMMRF).' }
+];
+
+export const glance = [
+  { value: '1st', label: 'Class Municipality', sub: 'Income Classification' },
+  { value: '104', label: 'Public Documents', sub: 'In the Public Archive' },
+  { value: '10', label: 'Elected Leaders', sub: 'Mayor, Vice Mayor & Councilors' },
+  { value: '1919', label: 'Founded', sub: 'Independent Municipality' }
 ];
 
 export const records = [
