@@ -47,7 +47,7 @@ export default function CivicFooter() {
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{t('ft.opensource')}</p>
             <p className="text-sm text-white/60">{t('ft.osDesc')}</p>
-            <a href="https://github.com/MewSeiren/betterteresa.org" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"><Github size={16} /> github.com/MewSeiren/betterteresa.org</a>
+            <a href="https://github.com/MewSeiren/betterteresa.org" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"><Github size={16} /> View on GitHub <ExternalLink size={12} className="opacity-70" /></a>
           </div>
         </div>
         <div className="mt-6 flex flex-wrap justify-between gap-3 text-xs text-white/45">
