@@ -28,7 +28,7 @@ export default function Tourism() {
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-          <Image src={MAP_URL} alt="Teresa Tourism Spots Locator Map" fittingType="fit" className="w-full" />
+          <Image src={MAP_URL} alt="Teresa Tourism Spots Locator Map" fittingType="fit" className="aspect-[16/10] w-full" />
           <p className="mt-2 px-2 pb-1 text-xs text-slate-400">{t('tm.mapCredit')}</p>
         </div>
 
