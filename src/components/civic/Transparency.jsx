@@ -9,7 +9,7 @@ export default function Transparency() {
   const found = useMemo(() => records.filter(r => (r.title + r.type + r.tags).toLowerCase().includes(q.toLowerCase())), [q]);
 
   return (
-    <section id="transparency" className="bg-white py-16">
+    <section id="documents" className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-8 max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">{t('tr.eyebrow')}</p>

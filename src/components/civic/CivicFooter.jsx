@@ -1,40 +1,42 @@
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ExternalLink, Github, Phone, ArrowRight } from 'lucide-react';
 import { Image } from '@/components/ui/image';
+import { hotlines } from '@/data/teresaData';
 import { useLang } from '@/lib/LanguageContext';
 
 const LOGO_URL = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/1319c9771_ChatGPTImageAug4202610_51_11PM.png';
 
+// Global footer. Every link is verified: internal routes use <Link>,
+// external sources are explicit, hotlines are click-to-call.
 export default function CivicFooter() {
   const { t } = useLang();
-  const columns = [
-    {
-      title: t('ft.explore'),
-      links: [
-        { label: t('nav.services'), href: '#services' },
-        { label: t('nav.government'), href: '#government' },
-        { label: t('nav.tourism'), href: '#tourism' },
-        { label: t('nav.transparency'), href: '#transparency' },
-        { label: t('nav.contact'), href: '#contact' }
-      ]
-    },
-    {
-      title: t('ft.sources'),
-      links: [
-        { label: 'Municipal Portal', href: 'https://teresarizal.gov.ph', ext: true },
-        { label: 'Public Document Archive', href: 'https://pda.teresarizal.gov.ph/', ext: true },
-        { label: 'Facebook Page', href: 'https://www.facebook.com/lguteresarizal', ext: true }
-      ]
-    },
-    {
-      title: t('ft.national'),
-      links: [
-        { label: 'Commission on Audit (COA)', href: 'https://www.coa.gov.ph/', ext: true },
-        { label: 'DBM Open Budget Portal', href: 'https://www.dbm.gov.ph/index.php/dbm-open-budget-portal', ext: true },
-        { label: 'Official Gov.ph', href: 'https://www.gov.ph/', ext: true }
-      ]
-    }
+
+  const explore = [
+    { label: t('nav.home'), to: '/' },
+    { label: t('nav.services'), to: '/services' },
+    { label: t('nav.government'), to: '/government' },
+    { label: t('nav.transparency'), to: '/transparency' },
+    { label: t('nav.tourism'), to: '/tourism' },
+    { label: t('nav.about'), to: '/about' },
+    { label: t('nav.contact'), to: '/contact' }
   ];
+  const officialSources = [
+    { label: 'Municipal Portal', href: 'https://teresarizal.gov.ph' },
+    { label: 'Public Document Archive', href: 'https://pda.teresarizal.gov.ph/' },
+    { label: 'Facebook Page', href: 'https://www.facebook.com/lguteresarizal' }
+  ];
+  const national = [
+    { label: 'Commission on Audit (COA)', href: 'https://www.coa.gov.ph/' },
+    { label: 'DBM Open Budget Portal', href: 'https://www.dbm.gov.ph/index.php/dbm-open-budget-portal' },
+    { label: 'Official Gov.ph', href: 'https://www.gov.ph/' }
+  ];
+
+  const ExtLink = ({ href, label }) => (
+    <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-white">
+      {label}<ExternalLink size={12} className="opacity-60" />
+    </a>
+  );
 
   return (
     <footer className="bg-[#0a1a35] text-white">
@@ -60,22 +62,49 @@ export default function CivicFooter() {
           </a>
         </div>
 
-        {/* Link grid */}
-        <div className="grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4">
-          {columns.map(col => (
-            <div key={col.title}>
-              <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{col.title}</p>
-              <ul className="grid gap-2.5 text-sm text-white/70">
-                {col.links.map(l => (
-                  <li key={l.label}>
-                    <a href={l.href} target={l.ext ? '_blank' : undefined} rel={l.ext ? 'noreferrer' : undefined} className="inline-flex items-center gap-1.5 transition hover:text-white">
-                      {l.label}{l.ext && <ExternalLink size={12} className="opacity-60" />}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Link grid — 5 verified columns */}
+        <div className="grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{t('ft.explore')}</p>
+            <ul className="grid gap-2.5 text-sm text-white/70">
+              {explore.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="transition hover:text-white">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#fbbf24]">{t('ft.hotlines')}</p>
+            <ul className="grid gap-2.5 text-sm text-white/70">
+              {hotlines.map((h) => (
+                <li key={h.key}>
+                  <a href={`tel:${h.tel}`} className="inline-flex items-center gap-1.5 transition hover:text-white">
+                    <Phone size={12} className="text-[#fbbf24]" />
+                    <span className="font-semibold">{t(`hl.${h.key}`)}</span>
+                    <span className="font-bold text-white/90">{h.number}</span>
+                  </a>
+                </li>
+              ))}
+              <li>
+                <Link to="/contact" className="inline-flex items-center gap-1.5 font-semibold text-[#60a5fa] transition hover:text-white">
+                  {t('ft.help')} <ArrowRight size={12} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{t('ft.sources')}</p>
+            <ul className="grid gap-2.5 text-sm text-white/70">
+              {officialSources.map((l) => <li key={l.href}><ExtLink href={l.href} label={l.label} /></li>)}
+            </ul>
+          </div>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{t('ft.national')}</p>
+            <ul className="grid gap-2.5 text-sm text-white/70">
+              {national.map((l) => <li key={l.href}><ExtLink href={l.href} label={l.label} /></li>)}
+            </ul>
+          </div>
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{t('ft.opensource')}</p>
             <p className="mb-4 text-sm text-white/55">{t('ft.osDesc')}</p>
@@ -83,8 +112,14 @@ export default function CivicFooter() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/45">
+        {/* Bottom bar */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/45">
           <p>{t('ft.rights')}</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/privacy" className="transition hover:text-white">{t('ft.privacy')}</Link>
+            <Link to="/accessibility" className="transition hover:text-white">{t('ft.accessibility')}</Link>
+            <a href="https://www.facebook.com/lguteresarizal" target="_blank" rel="noreferrer" className="transition hover:text-white">{t('ft.feedback')}</a>
+          </div>
           <p>{t('ft.sourceLine')}</p>
         </div>
       </div>

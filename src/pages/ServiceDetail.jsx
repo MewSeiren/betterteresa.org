@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Clock, MapPin, Phone, Mail, ArrowLeft, CheckCircle2, ExternalLink } from 'lucide-react';
 import NavBar from '@/components/civic/NavBar';
 import CivicFooter from '@/components/civic/CivicFooter';
+import Breadcrumbs from '@/components/civic/Breadcrumbs';
 import { findService } from '@/data/servicesData';
 import { useLang } from '@/lib/LanguageContext';
 
@@ -18,7 +19,7 @@ export default function ServiceDetail() {
         <div className="mx-auto max-w-3xl px-4 py-32 text-center">
           <h1 className="text-3xl font-black text-[#0a1a35]">{t('sd.notFound')}</h1>
           <p className="mt-3 text-slate-600">{t('sd.notFoundDesc')}</p>
-          <Link to="/#services" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1a73e8] px-6 py-3 font-bold text-white hover:bg-[#1557b0]"><ArrowLeft size={16} /> {t('sd.back')}</Link>
+          <Link to="/services" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1a73e8] px-6 py-3 font-bold text-white hover:bg-[#1557b0]"><ArrowLeft size={16} /> {t('sd.back')}</Link>
         </div>
         <CivicFooter />
       </div>
@@ -28,9 +29,10 @@ export default function ServiceDetail() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <NavBar />
-      <main className="pt-28">
+      <main className="pt-32">
         <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-          <Link to="/#services" className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1a73e8] hover:text-[#1557b0]"><ArrowLeft size={16} /> {t('sd.allServices')}</Link>
+          <Breadcrumbs items={[{ label: t('nav.services'), to: '/services' }, { label: cat.name }]} />
+          <Link to="/services" className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#1a73e8] hover:text-[#1557b0]"><ArrowLeft size={16} /> {t('sd.allServices')}</Link>
           <div className="mt-6">
             <span className="inline-flex items-center rounded-full bg-[#e8eff7] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#1565c0]">{cat.office}</span>
             <h1 className="mt-4 text-4xl font-black tracking-tight text-[#0a1a35] sm:text-5xl">{cat.name}</h1>

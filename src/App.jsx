@@ -11,6 +11,14 @@ import ServiceDetail from '@/pages/ServiceDetail';
 import TourismDirectory from '@/pages/TourismDirectory';
 import TourismEntry from '@/pages/TourismEntry';
 import TourismAdmin from '@/pages/admin/TourismAdmin';
+import ServicesPage from '@/pages/ServicesPage';
+import GovernmentPage from '@/pages/GovernmentPage';
+import TransparencyPage from '@/pages/TransparencyPage';
+import AboutPage from '@/pages/AboutPage';
+import ContactPage from '@/pages/ContactPage';
+import SearchResults from '@/pages/SearchResults';
+import PrivacyPage from '@/pages/PrivacyPage';
+import AccessibilityPage from '@/pages/AccessibilityPage';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
@@ -48,7 +56,15 @@ const AuthenticatedApp = () => {
     <Routes>
       {/* Add your page Route elements here */}
       <Route path="/" element={<Home />} />
+      <Route path="/services" element={<ServicesPage />} />
       <Route path="/services/:slug" element={<ServiceDetail />} />
+      <Route path="/government" element={<GovernmentPage />} />
+      <Route path="/transparency" element={<TransparencyPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/search" element={<SearchResults />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/accessibility" element={<AccessibilityPage />} />
       <Route path="/tourism" element={<TourismDirectory />} />
       <Route path="/tourism/:slug" element={<TourismEntry />} />
       <Route path="/login" element={<Login />} />

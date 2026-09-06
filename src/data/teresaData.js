@@ -1,8 +1,10 @@
+// Verified hotline numbers (Municipal Government of Teresa).
+// Availability is only stated where officially documented — never invented.
 export const hotlines = [
-  { label: 'Municipal Hall', number: '(02) 8250-6800' },
-  { label: 'PNP', number: '0945-113-7076' },
-  { label: 'BFP', number: '0917-771-0706' },
-  { label: 'MDRRMO', number: '0945-113-7077' }
+  { key: 'mdrrmo', label: 'MDRRMO Emergency', number: '0945-113-7077', tel: '+639451137077', availability: '24/7 Operations Center', icon: 'Siren' },
+  { key: 'pnp', label: 'PNP Teresa', number: '0945-113-7076', tel: '+639451137076', availability: '', icon: 'ShieldCheck' },
+  { key: 'bfp', label: 'BFP Teresa', number: '0917-771-0706', tel: '+639177710706', availability: '', icon: 'Flame' },
+  { key: 'hall', label: 'Municipal Hall', number: '(02) 8250-6800', tel: '+63282506800', availability: 'Mon–Fri 8:00 AM – 5:00 PM', icon: 'Landmark' }
 ];
 
 export const officials = [
@@ -32,10 +34,10 @@ export const services = [
 ];
 
 export const quickAccess = [
-  { title: 'Financial Reports', desc: 'Budget & income statements', icon: 'Peso', href: 'https://pda.teresarizal.gov.ph/' },
-  { title: 'Infrastructure', desc: 'Track ongoing projects', icon: 'Building2', href: '#transparency' },
-  { title: 'Legislation', desc: 'Ordinances & resolutions', icon: 'Gavel', href: '#transparency' },
-  { title: 'Statistics', desc: 'Population & demographics', icon: 'BarChart3', href: '#glance' }
+  { title: 'Financial Reports', desc: 'Budget & income statements', icon: 'Peso', href: '/transparency#documents' },
+  { title: 'Infrastructure', desc: 'Track ongoing projects', icon: 'Building2', href: '/transparency#projects' },
+  { title: 'Legislation', desc: 'Ordinances & resolutions', icon: 'Gavel', href: '/transparency#documents' },
+  { title: 'Statistics', desc: 'Population & demographics', icon: 'BarChart3', href: '/about' }
 ];
 
 export const history = [

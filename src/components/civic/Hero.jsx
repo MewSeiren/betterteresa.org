@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Search, ArrowRight } from 'lucide-react';
-import { searchServices } from '@/data/servicesData';
 import { useLang } from '@/lib/LanguageContext';
 
 const HERO_BG = 'https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/cbad148b9_generated_image.png';
@@ -18,11 +17,11 @@ export default function Hero() {
   const [q, setQ] = useState('');
   const navigate = useNavigate();
 
+  // The hero search routes to the real site-wide search results page.
   const submit = (e) => {
     e.preventDefault();
-    const match = searchServices(q);
-    if (match) navigate(`/services/${match.slug}`);
-    else document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    if (!q.trim()) return;
+    navigate(`/search?q=${encodeURIComponent(q.trim())}`);
   };
 
   return (
@@ -36,15 +35,22 @@ export default function Hero() {
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/90 backdrop-blur">{t('hero.badge')}</p>
           <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[0.95] tracking-tight">{t('hero.title')}</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{t('hero.subtitle')}</p>
-          <form onSubmit={submit} className="mt-8 max-w-xl">
+          <form onSubmit={submit} className="mt-8 max-w-xl" role="search">
             <div className="flex items-center gap-2 rounded-full bg-white px-2 py-1.5 shadow-lg">
               <Search className="ml-2 text-slate-400" size={18} />
-              <input value={q} onChange={e => setQ(e.target.value)} placeholder={t('hero.searchPlaceholder')} className="w-full bg-transparent px-1 py-2 text-sm text-slate-700 outline-none" />
+              <input
+                type="text"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder={t('hero.searchPlaceholder')}
+                aria-label={t('hero.searchPlaceholder')}
+                className="w-full bg-transparent px-1 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400"
+              />
               <button type="submit" className="shrink-0 rounded-full bg-[#1a73e8] px-5 py-2 text-sm font-bold text-white hover:bg-[#1557b0]">{t('hero.search')}</button>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              {chips.map(c => (
-                <button key={c.slug} type="button" onClick={() => navigate(`/services/${c.slug}`)} className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/20">{c.label} <ArrowRight size={13} /></button>
+              {chips.map((c) => (
+                <Link key={c.slug} to={`/services/${c.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/20">{c.label} <ArrowRight size={13} /></Link>
               ))}
             </div>
           </form>
