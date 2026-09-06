@@ -1,51 +1,80 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { Landmark, Waves, UtensilsCrossed, KeyRound, Store, MapPin, ArrowRight } from 'lucide-react';
+import PlaceCard from '@/components/tourism/PlaceCard';
+import useTourismPlaces from '@/hooks/useTourismPlaces';
+import { CATEGORIES, categoryLabel } from '@/data/tourismTaxonomy';
+import { isActivePlace } from '@/lib/tourism';
 import { useLang } from '@/lib/LanguageContext';
 
-const gmap = (name) => `https://www.google.com/maps/search/${encodeURIComponent(name + ', Teresa, Rizal')}`;
+const ICONS = { Landmark, Waves, UtensilsCrossed, KeyRound, Store, MapPin };
 
-const CATS = [
-  { key: 'tm.catChurch', color: '#8CC63F', spots: ['St. Rose of Lima Parish Church'] },
-  { key: 'tm.catResort', color: '#F7941E', spots: ["Marden\u2019s Place Private Resort", "Tita El\u2019s Place Private Resort", 'Yasak Resort', 'Rancho Felipe', 'Rancho Bravo'] },
-  { key: 'tm.catParks', color: '#EC008C', spots: ['Quest Adventure Camp', 'Sidetrip'] },
-  { key: 'tm.catFood', color: '#0071BC', spots: ['Ancla Coffee', "Greyson\u2019s Dimsum and Noodles", 'Thirteen Thirty Cafe', "Dad\u2019s Burger & House of Unlimited", "Ysabelle\u2019s Garden", 'Cafe Amelita', "Aurora\u2019s Place", 'Kamayan sa Palayan', "Kokoyito\u2019s Sizzling Hauz", "Eat\u2019s Takoyummy Food Hub", 'Gocca Coffee', 'Balai Urunjing', "Leof\u2019s Food House", "MJ\u2019s Burger", "Pinoy\u2019s Tsibug", "Teresa\u2019s Mais at Mani", "Timplado\u2019s Cuisine", 'Samgville 199', "Amara\u2019s Corner", "Jhayco\u2019s Grill and Restaurant", 'Wish Upon a Cake'] },
-  { key: 'tm.catRental', color: '#92278F', spots: ['Dicitadel Swimming Pool Rental', 'Simon De La Casa'] },
-  { key: 'tm.catIndustrial', color: '#00AEEF', spots: ['Integrated Solid Waste Management Facility (MRF)'] },
-  { key: 'tm.catOthers', color: '#29ABE2', spots: ['Sarian Exotic Farm'] }
-];
-
+// Home-page teaser for the full tourism directory at /tourism.
 export default function Tourism() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const { places } = useTourismPlaces();
+  const featured = useMemo(
+    () => (places || []).filter((p) => isActivePlace(p) && p.is_featured).slice(0, 3),
+    [places]
+  );
+  const activeCount = useMemo(() => (places || []).filter(isActivePlace).length, [places]);
+
   return (
     <section id="tourism" className="bg-[#f8f9fa] py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mb-8 max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">{t('tm.eyebrow')}</p>
-          <h2 className="mt-2 text-3xl font-black tracking-tight text-[#0a1a35] sm:text-4xl">{t('tm.title')}</h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600">{t('tm.desc')}</p>
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[.2em] text-[#1a73e8]">{t('tm.eyebrow')}</p>
+            <h2 className="mt-2 text-2xl font-black tracking-tight text-[#0a1a35] sm:text-3xl">{t('tm.title')}</h2>
+            <p className="mt-3 text-base leading-relaxed text-slate-600">{t('tm.desc')}</p>
+          </div>
+          <Link
+            to="/tourism"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0a1a35] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#15294a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1a73e8]"
+          >
+            {t('tm.exploreCta')} <ArrowRight size={16} />
+          </Link>
         </div>
 
-        <h3 className="mt-2 text-sm font-bold uppercase tracking-wider text-[#0a1a35]">{t('tm.spotsTitle')}</h3>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CATS.map(c => (
-            <div key={c.key} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <div className="flex items-center gap-2.5 border-b border-slate-100 px-5 py-3.5" style={{ backgroundColor: `${c.color}12` }}>
-                <span className="h-3.5 w-3.5 rounded-full" style={{ backgroundColor: c.color }} />
-                <h3 className="flex-1 text-sm font-black text-[#0a1a35]">{t(c.key)}</h3>
-                <span className="rounded-full bg-white/70 px-2 py-0.5 text-xs font-bold text-slate-500">{c.spots.length}</span>
-              </div>
-              <ul className="p-2">
-                {c.spots.map(s => (
-                  <li key={s}>
-                    <a href={gmap(s)} target="_blank" rel="noreferrer" className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-[#f8f9fa] hover:text-[#1a73e8]">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: c.color }} />
-                      <span className="truncate">{s}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Category chips */}
+        <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-[#0a1a35]">{t('tm.spotsTitle')}</h3>
+        <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {CATEGORIES.map((c) => {
+            const Icon = ICONS[c.icon] || MapPin;
+            return (
+              <Link
+                key={c.key}
+                to={`/tourism/${c.slug}`}
+                className="group flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3.5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#1a73e8]/40 hover:shadow-md"
+              >
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg" style={{ backgroundColor: `${c.color}18`, color: c.color }} aria-hidden="true">
+                  <Icon size={18} />
+                </span>
+                <span className="min-w-0 text-sm font-bold leading-tight text-[#0a1a35] group-hover:text-[#1a73e8]">
+                  {categoryLabel(c, lang)}
+                </span>
+              </Link>
+            );
+          })}
         </div>
+
+        {/* Featured places */}
+        {places ? (
+          featured.length > 0 && (
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {featured.map((p) => <PlaceCard key={p.id} place={p} />)}
+            </div>
+          )
+        ) : (
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-hidden="true">
+            {[0, 1, 2].map((i) => <div key={i} className="h-64 animate-pulse rounded-2xl bg-white/70" />)}
+          </div>
+        )}
+        {places && (
+          <p className="mt-6 text-center text-sm font-semibold text-slate-400">
+            {activeCount} {t('tm.inDirectory')} — <Link to="/tourism" className="text-[#1a73e8] hover:underline">{t('tm.exploreCta')}</Link>
+          </p>
+        )}
       </div>
     </section>
   );

@@ -8,6 +8,15 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
 import ServiceDetail from '@/pages/ServiceDetail';
+import TourismDirectory from '@/pages/TourismDirectory';
+import TourismEntry from '@/pages/TourismEntry';
+import TourismAdmin from '@/pages/admin/TourismAdmin';
+import ProtectedRoute from '@/components/ProtectedRoute';
+import Login from '@/pages/Login';
+import Register from '@/pages/Register';
+import ForgotPassword from '@/pages/ForgotPassword';
+import ResetPassword from '@/pages/ResetPassword';
+import { Navigate } from 'react-router-dom';
 import { LanguageProvider } from '@/lib/LanguageContext';
 // Add page imports here
 
@@ -40,6 +49,15 @@ const AuthenticatedApp = () => {
       {/* Add your page Route elements here */}
       <Route path="/" element={<Home />} />
       <Route path="/services/:slug" element={<ServiceDetail />} />
+      <Route path="/tourism" element={<TourismDirectory />} />
+      <Route path="/tourism/:slug" element={<TourismEntry />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>
+        <Route path="/admin/tourism" element={<TourismAdmin />} />
+      </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

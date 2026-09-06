@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { useLang } from '@/lib/LanguageContext';
@@ -20,7 +21,7 @@ export default function NavBar() {
     { label: t('nav.home'), href: '#home' },
     { label: t('nav.services'), href: '#services' },
     { label: t('nav.government'), href: '#government' },
-    { label: t('nav.tourism'), href: '#tourism' },
+    { label: t('nav.tourism'), route: '/tourism' },
     { label: t('nav.statistics'), href: '#glance' },
     { label: t('nav.transparency'), href: '#transparency' },
     { label: t('nav.contact'), href: '#contact' }
@@ -56,7 +57,9 @@ export default function NavBar() {
             </div>
           </a>
           <nav className="hidden items-center gap-1 lg:flex">
-            {navLinks.map(l => <a key={l.label} href={l.href} className="rounded-md px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-[#0a1a35]">{l.label}</a>)}
+            {navLinks.map(l => l.route
+              ? <Link key={l.label} to={l.route} className="rounded-md px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-[#0a1a35]">{l.label}</Link>
+              : <a key={l.label} href={l.href} className="rounded-md px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-[#0a1a35]">{l.label}</a>)}
           </nav>
           <div className="flex items-center gap-2">
             <LangToggle />
@@ -75,7 +78,9 @@ export default function NavBar() {
             <button onClick={() => setOpen(false)} className="grid h-11 w-11 place-items-center" aria-label="Close menu"><X className="text-slate-700" /></button>
           </div>
           <nav className="mt-10 grid gap-2">
-            {navLinks.map(l => <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="rounded-lg border-b border-slate-100 py-4 text-2xl font-semibold text-slate-800">{l.label}</a>)}
+            {navLinks.map(l => l.route
+              ? <Link key={l.label} to={l.route} onClick={() => setOpen(false)} className="rounded-lg border-b border-slate-100 py-4 text-2xl font-semibold text-slate-800">{l.label}</Link>
+              : <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="rounded-lg border-b border-slate-100 py-4 text-2xl font-semibold text-slate-800">{l.label}</a>)}
             <div className="mt-4 flex items-center justify-between rounded-xl bg-[#f8f9fa] px-4 py-3">
               <span className="text-sm font-bold text-slate-600">Language</span>
               <LangToggle />

@@ -1,0 +1,146 @@
+{
+  "name": "TourismPlace",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "description": "Category key from the taxonomy (attractions, recreation, food, services, business, others)"
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Subcategory key from the taxonomy"
+    },
+    "description": {
+      "type": "string"
+    },
+    "barangay": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "maps_url": {
+      "type": "string"
+    },
+    "contact_number": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "facebook_url": {
+      "type": "string"
+    },
+    "instagram_url": {
+      "type": "string"
+    },
+    "tiktok_url": {
+      "type": "string"
+    },
+    "opening_hours": {
+      "type": "string"
+    },
+    "price_range": {
+      "type": "string"
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Image URLs (uploaded files or legally usable images)"
+    },
+    "ownership_type": {
+      "type": "string"
+    },
+    "tourism_relevance": {
+      "type": "string"
+    },
+    "source_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_name": {
+      "type": "string"
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "needs_verification",
+        "recently_updated",
+        "potentially_inactive",
+        "closed",
+        "archived"
+      ]
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "admin_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "slug",
+    "category",
+    "verification_status"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
