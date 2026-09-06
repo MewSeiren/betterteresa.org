@@ -46,60 +46,60 @@ export default function NavBar() {
 
   useEffect(() => {
     document.body.style.overflow = openMenu ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {document.body.style.overflow = '';};
   }, [openMenu]);
 
   const navItems = [
-    { key: 'home', label: t('nav.home'), to: '/' },
-    {
-      key: 'services',
-      label: t('nav.services'),
-      to: '/services',
-      children: [
-        { label: t('qa.viewAll'), to: '/services' },
-        ...serviceCategories.map((c) => ({ label: c.name, to: `/services/${c.slug}` }))
-      ]
-    },
-    {
-      key: 'government',
-      label: t('nav.government'),
-      to: '/government',
-      children: [
-        { label: t('gv.title'), to: '/government' },
-        { label: t('ct.directory'), to: '/government#offices' },
-        { label: t('nav.contact'), to: '/contact' }
-      ]
-    },
-    {
-      key: 'transparency',
-      label: t('nav.transparency'),
-      to: '/transparency',
-      children: [
-        { label: t('tr.title'), to: '/transparency#documents' },
-        { label: t('tr.projects'), to: '/transparency#projects' }
-      ]
-    },
-    {
-      key: 'tourism',
-      label: t('nav.tourism'),
-      to: '/tourism',
-      children: [
-        { label: t('tm.dirTitle'), to: '/tourism' },
-        ...CATEGORIES.map((c) => ({ label: categoryLabel(c, lang), to: `/tourism/${c.slug}` }))
-      ]
-    },
-    {
-      key: 'about',
-      label: t('nav.about'),
-      to: '/about',
-      children: [
-        { label: t('ab.municipality'), to: '/about' },
-        { label: t('hi.eyebrow'), to: '/about#history' },
-        { label: t('ab.barangays'), to: '/about#barangays' },
-        { label: t('nav.contact'), to: '/contact' }
-      ]
-    }
-  ];
+  { key: 'home', label: t('nav.home'), to: '/' },
+  {
+    key: 'services',
+    label: t('nav.services'),
+    to: '/services',
+    children: [
+    { label: t('qa.viewAll'), to: '/services' },
+    ...serviceCategories.map((c) => ({ label: c.name, to: `/services/${c.slug}` }))]
+
+  },
+  {
+    key: 'government',
+    label: t('nav.government'),
+    to: '/government',
+    children: [
+    { label: t('gv.title'), to: '/government' },
+    { label: t('ct.directory'), to: '/government#offices' },
+    { label: t('nav.contact'), to: '/contact' }]
+
+  },
+  {
+    key: 'transparency',
+    label: t('nav.transparency'),
+    to: '/transparency',
+    children: [
+    { label: t('tr.title'), to: '/transparency#documents' },
+    { label: t('tr.projects'), to: '/transparency#projects' }]
+
+  },
+  {
+    key: 'tourism',
+    label: t('nav.tourism'),
+    to: '/tourism',
+    children: [
+    { label: t('tm.dirTitle'), to: '/tourism' },
+    ...CATEGORIES.map((c) => ({ label: categoryLabel(c, lang), to: `/tourism/${c.slug}` }))]
+
+  },
+  {
+    key: 'about',
+    label: t('nav.about'),
+    to: '/about',
+    children: [
+    { label: t('ab.municipality'), to: '/about' },
+    { label: t('hi.eyebrow'), to: '/about#history' },
+    { label: t('ab.barangays'), to: '/about#barangays' },
+    { label: t('nav.contact'), to: '/contact' }]
+
+  }];
+
 
   const isActiveGroup = (key) => {
     if (key === 'home') return pathname === '/';
@@ -110,16 +110,16 @@ export default function NavBar() {
   };
 
   const navLinkCls = (on) =>
-    `inline-flex items-center gap-1 rounded-md border-b-2 px-3 py-2 text-sm font-semibold transition ${on
-      ? 'border-[#1a73e8] text-[#1565c0]'
-      : 'border-transparent text-slate-700 hover:bg-slate-100 hover:text-[#0a1a35]'}`;
+  `inline-flex items-center gap-1 rounded-md border-b-2 px-3 py-2 text-sm font-semibold transition ${on ?
+  'border-[#1a73e8] text-[#1565c0]' :
+  'border-transparent text-slate-700 hover:bg-slate-100 hover:text-[#0a1a35]'}`;
 
-  const LangToggle = ({ dark }) => (
-    <div className="flex items-center rounded-full border p-0.5 text-xs font-bold" style={{ borderColor: dark ? 'rgba(255,255,255,0.25)' : '#e2e8f0' }}>
+  const LangToggle = ({ dark }) =>
+  <div className="flex items-center rounded-full border p-0.5 text-xs font-bold" style={{ borderColor: dark ? 'rgba(255,255,255,0.25)' : '#e2e8f0' }}>
       <button onClick={() => setLang('en')} className={`rounded-full px-2.5 py-1 transition ${lang === 'en' ? 'bg-[#1a73e8] text-white' : dark ? 'text-white/70 hover:text-white' : 'text-slate-600 hover:text-[#0a1a35]'}`}>EN</button>
       <button onClick={() => setLang('fil')} className={`rounded-full px-2.5 py-1 transition ${lang === 'fil' ? 'bg-[#1a73e8] text-white' : dark ? 'text-white/70 hover:text-white' : 'text-slate-600 hover:text-[#0a1a35]'}`}>FIL</button>
-    </div>
-  );
+    </div>;
+
 
   const HotlineLink = ({ h, className }) => {
     const Icon = HOTLINE_ICONS[h.icon] || Phone;
@@ -128,8 +128,8 @@ export default function NavBar() {
         <Icon size={13} className="shrink-0 text-[#fbbf24]" aria-hidden="true" />
         <span className="truncate">{t(`hl.${h.key}`)}</span>
         <span className="whitespace-nowrap font-bold">{h.number}</span>
-      </a>
-    );
+      </a>);
+
   };
 
   return (
@@ -138,16 +138,16 @@ export default function NavBar() {
       <div className="bg-[#0a1a35] text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-1.5 text-xs sm:px-6">
           <div className="hidden min-w-0 flex-1 items-center gap-4 md:flex">
-            {hotlines.map((h) => (
-              <HotlineLink key={h.key} h={h} className="inline-flex items-center gap-1.5 font-semibold text-white/80 transition hover:text-white" />
-            ))}
+            {hotlines.map((h) =>
+            <HotlineLink key={h.key} h={h} className="inline-flex items-center gap-1.5 font-semibold text-white/80 transition hover:text-white" />
+            )}
           </div>
           <button
             type="button"
             onClick={() => setHotlinePanel((v) => !v)}
             aria-expanded={hotlinePanel}
-            className="inline-flex items-center gap-1.5 py-0.5 font-bold text-white md:hidden"
-          >
+            className="inline-flex items-center gap-1.5 py-0.5 font-bold text-white md:hidden">
+            
             <Siren size={14} className="text-[#fbbf24]" aria-hidden="true" />
             {t('nav.hotlines')}
             <ChevronDown size={13} className={hotlinePanel ? 'rotate-180 transition' : 'transition'} aria-hidden="true" />
@@ -157,22 +157,22 @@ export default function NavBar() {
             <LangToggle dark />
           </div>
         </div>
-        {hotlinePanel && (
-          <div className="border-t border-white/10 px-4 py-3 md:hidden">
+        {hotlinePanel &&
+        <div className="border-t border-white/10 px-4 py-3 md:hidden">
             <div className="grid gap-2">
-              {hotlines.map((h) => (
-                <HotlineLink key={h.key} h={h} className="flex items-center justify-between gap-2 rounded-lg bg-white/5 px-3 py-2.5 text-sm font-semibold text-white/85" />
-              ))}
+              {hotlines.map((h) =>
+            <HotlineLink key={h.key} h={h} className="flex items-center justify-between gap-2 rounded-lg bg-white/5 px-3 py-2.5 text-sm font-semibold text-white/85" />
+            )}
             </div>
           </div>
-        )}
+        }
       </div>
 
       {/* Main bar: logo, nav + dropdowns, search (desktop); logo/search/menu (mobile) */}
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Better Teresa — Home">
-            <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_10px_rgba(26,115,232,0.5)]" fittingType="fit" />
+            <Image src="https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/bca732631_ChatGPT_Image_Sep_6__2026__11_19_22_AM.png" alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_10px_rgba(26,115,232,0.5)]" fittingType="fit" />
             <div className="leading-tight">
               <p className="text-lg font-black tracking-tight text-[#0a1a35]">Better Teresa</p>
               <span className="mt-0.5 inline-block rounded bg-[#1a73e8]/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-[#1a73e8]">.ORG</span>
@@ -190,24 +190,24 @@ export default function NavBar() {
                   key={item.key}
                   className="relative"
                   onMouseEnter={() => setOpenGroup(item.key)}
-                  onMouseLeave={() => setOpenGroup(null)}
-                >
+                  onMouseLeave={() => setOpenGroup(null)}>
+                  
                   <Link to={item.to} className={navLinkCls(on)} aria-haspopup="true" aria-expanded={openGroup === item.key}>
                     {item.label} <ChevronDown size={13} aria-hidden="true" />
                   </Link>
-                  {openGroup === item.key && (
-                    <div className="absolute left-0 top-full z-50 w-80 pt-1.5">
+                  {openGroup === item.key &&
+                  <div className="absolute left-0 top-full z-50 w-80 pt-1.5">
                       <div className="max-h-[65vh] overflow-y-auto rounded-xl border border-slate-200 bg-white py-2 shadow-2xl">
-                        {item.children.map((ch) => (
-                          <Link key={`${ch.to}-${ch.label}`} to={ch.to} className="block px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-[#e8eff7] hover:text-[#1565c0]">
+                        {item.children.map((ch) =>
+                      <Link key={`${ch.to}-${ch.label}`} to={ch.to} className="block px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-[#e8eff7] hover:text-[#1565c0]">
                             {ch.label}
                           </Link>
-                        ))}
+                      )}
                       </div>
                     </div>
-                  )}
-                </div>
-              );
+                  }
+                </div>);
+
             })}
           </nav>
 
@@ -224,16 +224,16 @@ export default function NavBar() {
             </button>
           </div>
         </div>
-        {mobileSearch && (
-          <div className="border-t border-slate-100 px-4 py-2.5 xl:hidden">
+        {mobileSearch &&
+        <div className="border-t border-slate-100 px-4 py-2.5 xl:hidden">
             <SearchBox />
           </div>
-        )}
+        }
       </div>
 
       {/* Mobile menu — same destinations as desktop, plus hotlines and search */}
-      {openMenu && (
-        <div className="fixed inset-0 z-[70] flex flex-col bg-white lg:hidden">
+      {openMenu &&
+      <div className="fixed inset-0 z-[70] flex flex-col bg-white lg:hidden">
           <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
             <div className="flex items-center gap-3">
               <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-11 w-11 rounded-full object-contain" fittingType="fit" />
@@ -248,39 +248,39 @@ export default function NavBar() {
 
             <p className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-400">{t('nav.hotlines')}</p>
             <div className="grid gap-2">
-              {hotlines.map((h) => (
-                <HotlineLink key={h.key} h={h} className="flex items-center justify-between gap-2 rounded-xl border border-slate-200 bg-[#f8f9fa] px-3 py-3 text-sm font-semibold text-slate-700" />
-              ))}
+              {hotlines.map((h) =>
+            <HotlineLink key={h.key} h={h} className="flex items-center justify-between gap-2 rounded-xl border border-slate-200 bg-[#f8f9fa] px-3 py-3 text-sm font-semibold text-slate-700" />
+            )}
             </div>
 
             <nav className="mt-6 grid gap-0" aria-label="Mobile navigation">
               {navItems.map((item) => {
-                if (!item.children) {
-                  return (
-                    <Link key={item.key} to={item.to} className="border-b border-slate-100 py-3.5 text-xl font-bold text-slate-800">
-                      {item.label}
-                    </Link>
-                  );
-                }
-                const open = openAcc === item.key;
+              if (!item.children) {
                 return (
-                  <div key={item.key} className="border-b border-slate-100">
+                  <Link key={item.key} to={item.to} className="border-b border-slate-100 py-3.5 text-xl font-bold text-slate-800">
+                      {item.label}
+                    </Link>);
+
+              }
+              const open = openAcc === item.key;
+              return (
+                <div key={item.key} className="border-b border-slate-100">
                     <button type="button" onClick={() => setOpenAcc(open ? null : item.key)} aria-expanded={open} className="flex w-full items-center justify-between py-3.5 text-left text-xl font-bold text-slate-800">
                       {item.label}
                       <ChevronDown size={20} className={open ? 'rotate-180 text-slate-400 transition' : 'text-slate-400 transition'} aria-hidden="true" />
                     </button>
-                    {open && (
-                      <div className="grid gap-0.5 pb-3">
-                        {item.children.map((ch) => (
-                          <Link key={`${ch.to}-${ch.label}`} to={ch.to} onClick={() => setOpenMenu(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#1565c0]">
+                    {open &&
+                  <div className="grid gap-0.5 pb-3">
+                        {item.children.map((ch) =>
+                    <Link key={`${ch.to}-${ch.label}`} to={ch.to} onClick={() => setOpenMenu(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#1565c0]">
                             {ch.label}
                           </Link>
-                        ))}
-                      </div>
                     )}
-                  </div>
-                );
-              })}
+                      </div>
+                  }
+                  </div>);
+
+            })}
             </nav>
 
             <div className="mt-6 flex items-center justify-between rounded-xl bg-[#f8f9fa] px-4 py-3">
@@ -289,7 +289,7 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-      )}
-    </header>
-  );
+      }
+    </header>);
+
 }
