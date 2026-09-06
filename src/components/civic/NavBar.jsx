@@ -172,7 +172,7 @@ export default function NavBar() {
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Better Teresa — Home">
-            <Image src="https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/bca732631_ChatGPT_Image_Sep_6__2026__11_19_22_AM.png" alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_10px_rgba(26,115,232,0.5)]" fittingType="fit" />
+            <Image src="https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/c20b63916_ChatGPT_Image_Sep_6__2026__11_23_26_AM.png" alt="Teresa, Rizal official seal" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_10px_rgba(26,115,232,0.5)]" fittingType="fit" />
             <div className="leading-tight">
               <p className="text-lg font-black tracking-tight text-[#0a1a35]">Better Teresa</p>
               <span className="mt-0.5 inline-block rounded bg-[#1a73e8]/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-[#1a73e8]">.ORG</span>

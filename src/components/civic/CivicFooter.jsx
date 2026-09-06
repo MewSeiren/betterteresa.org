@@ -13,30 +13,30 @@ export default function CivicFooter() {
   const { t } = useLang();
 
   const explore = [
-    { label: t('nav.home'), to: '/' },
-    { label: t('nav.services'), to: '/services' },
-    { label: t('nav.government'), to: '/government' },
-    { label: t('nav.transparency'), to: '/transparency' },
-    { label: t('nav.tourism'), to: '/tourism' },
-    { label: t('nav.about'), to: '/about' },
-    { label: t('nav.contact'), to: '/contact' }
-  ];
-  const officialSources = [
-    { label: 'Municipal Portal', href: 'https://teresarizal.gov.ph' },
-    { label: 'Public Document Archive', href: 'https://pda.teresarizal.gov.ph/' },
-    { label: 'Facebook Page', href: 'https://www.facebook.com/lguteresarizal' }
-  ];
-  const national = [
-    { label: 'Commission on Audit (COA)', href: 'https://www.coa.gov.ph/' },
-    { label: 'DBM Open Budget Portal', href: 'https://www.dbm.gov.ph/index.php/dbm-open-budget-portal' },
-    { label: 'Official Gov.ph', href: 'https://www.gov.ph/' }
-  ];
+  { label: t('nav.home'), to: '/' },
+  { label: t('nav.services'), to: '/services' },
+  { label: t('nav.government'), to: '/government' },
+  { label: t('nav.transparency'), to: '/transparency' },
+  { label: t('nav.tourism'), to: '/tourism' },
+  { label: t('nav.about'), to: '/about' },
+  { label: t('nav.contact'), to: '/contact' }];
 
-  const ExtLink = ({ href, label }) => (
-    <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-white">
+  const officialSources = [
+  { label: 'Municipal Portal', href: 'https://teresarizal.gov.ph' },
+  { label: 'Public Document Archive', href: 'https://pda.teresarizal.gov.ph/' },
+  { label: 'Facebook Page', href: 'https://www.facebook.com/lguteresarizal' }];
+
+  const national = [
+  { label: 'Commission on Audit (COA)', href: 'https://www.coa.gov.ph/' },
+  { label: 'DBM Open Budget Portal', href: 'https://www.dbm.gov.ph/index.php/dbm-open-budget-portal' },
+  { label: 'Official Gov.ph', href: 'https://www.gov.ph/' }];
+
+
+  const ExtLink = ({ href, label }) =>
+  <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 transition hover:text-white">
       {label}<ExternalLink size={12} className="opacity-60" />
-    </a>
-  );
+    </a>;
+
 
   return (
     <footer className="bg-[#0a1a35] text-white">
@@ -45,7 +45,7 @@ export default function CivicFooter() {
         <div className="flex flex-col gap-6 border-b border-white/10 pb-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-4">
             <div className="rounded-2xl bg-white/5 p-2 ring-1 ring-white/10">
-              <Image src={LOGO_URL} alt="Teresa, Rizal official seal" className="h-24 w-24 object-contain drop-shadow-[0_0_22px_rgba(147,197,253,0.85)] drop-shadow-[0_0_44px_rgba(96,165,250,0.55)]" fittingType="fit" />
+              <Image src="https://media.base44.com/images/public/6a71c2bad4d8c6705a9917b5/bca732631_ChatGPT_Image_Sep_6__2026__11_19_22_AM.png" alt="Teresa, Rizal official seal" className="h-24 w-24 object-contain drop-shadow-[0_0_22px_rgba(147,197,253,0.85)] drop-shadow-[0_0_44px_rgba(96,165,250,0.55)]" fittingType="fit" />
             </div>
             <div>
               <p className="text-2xl font-black tracking-tight">Better Teresa<span className="ml-1 align-top text-xs font-bold tracking-wider text-[#60a5fa]">.ORG</span></p>
@@ -67,25 +67,25 @@ export default function CivicFooter() {
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#60a5fa]">{t('ft.explore')}</p>
             <ul className="grid gap-2.5 text-sm text-white/70">
-              {explore.map((l) => (
-                <li key={l.to}>
+              {explore.map((l) =>
+              <li key={l.to}>
                   <Link to={l.to} className="transition hover:text-white">{l.label}</Link>
                 </li>
-              ))}
+              )}
             </ul>
           </div>
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#fbbf24]">{t('ft.hotlines')}</p>
             <ul className="grid gap-2.5 text-sm text-white/70">
-              {hotlines.map((h) => (
-                <li key={h.key}>
+              {hotlines.map((h) =>
+              <li key={h.key}>
                   <a href={`tel:${h.tel}`} className="inline-flex items-center gap-1.5 transition hover:text-white">
                     <Phone size={12} className="text-[#fbbf24]" />
                     <span className="font-semibold">{t(`hl.${h.key}`)}</span>
                     <span className="font-bold text-white/90">{h.number}</span>
                   </a>
                 </li>
-              ))}
+              )}
               <li>
                 <Link to="/contact" className="inline-flex items-center gap-1.5 font-semibold text-[#60a5fa] transition hover:text-white">
                   {t('ft.help')} <ArrowRight size={12} />
@@ -123,6 +123,6 @@ export default function CivicFooter() {
           <p>{t('ft.sourceLine')}</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
